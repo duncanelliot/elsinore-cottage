@@ -99,6 +99,7 @@ export interface KanbanBoardProps {
 	statusOrder: string[];
 	statusLabels: StatusLabels;
 	showChangeNotification: () => void;
+	onCardClick?: (todo: Todo) => void;
 }
 
 export interface TodosByOrganizationProps {

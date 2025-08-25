@@ -10,7 +10,8 @@
 		items = [],
 		onConsider,
 		onFinalize,
-		dragDisabled
+		dragDisabled,
+		onCardClick
 	} = $props();
 
 	function getStatusHeaderStyle(status) {
@@ -75,7 +76,7 @@
 	>
 		{#each items as todo (todo.id)}
 			<div animate:flip={{duration: 300}}>
-				<KanbanCard {todo} />
+				<KanbanCard {todo} {onCardClick} />
 			</div>
 		{/each}
 		

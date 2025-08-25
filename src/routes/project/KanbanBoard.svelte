@@ -11,7 +11,8 @@
 		todos = $bindable(),
 		statusOrder,
 		statusLabels,
-		showChangeNotification
+		showChangeNotification,
+		onCardClick
 	}: KanbanBoardProps = $props();
 
 	let dragDisabled = $state(false);
@@ -238,12 +239,14 @@
 					{#each columns[status] || [] as todo (todo.id)}
 					<div
 						animate:flip={{ duration: 300 }}
-						class="kanban-card bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all cursor-move select-none"
+						class="kanban-card bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all cursor-pointer select-none"
 						class:mb-3={expandedColumn !== status}
 						class:w-full={expandedColumn === status}
 						tabindex="0"
 						role="button"
-						aria-label="Drag to move task"
+						aria-label="Click to edit task"
+						onclick={() => onCardClick?.(todo)}
+						onkeydown={(e) => e.key === 'Enter' && onCardClick?.(todo)}
 					>
 							<div class="card-header" class:p-3={!isNarrow && expandedColumn !== status} class:pb-2={!isNarrow && expandedColumn !== status} class:p-2={isNarrow} class:p-4={expandedColumn === status}>
 								{#if expandedColumn === status}

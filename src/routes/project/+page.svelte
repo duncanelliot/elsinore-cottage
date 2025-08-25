@@ -9,6 +9,7 @@
 	import ProjectParticipants from './ProjectParticipants.svelte';
 	import SaveIndicator from './SaveIndicator.svelte';
 	import AddTaskModal from './AddTaskModal.svelte';
+	import EditTaskModal from './EditTaskModal.svelte';
 	import { participants } from './data/participants.js';
 	import { projectDetails } from './data/project-details.js';
 	import { assigneeEmails } from './data/assignee-emails.js';
@@ -17,6 +18,8 @@
 
 	let lastModified = $state<string | null>(null);
 	let showSaveIndicator = $state(false);
+	let editTaskModalOpen = $state(false);
+	let selectedTask = $state<Todo | null>(null);
 
 	// Initialize todos from imported data
 	let todos = $state<Todo[]>([...(initialTodos as Todo[])]);
@@ -35,6 +38,36 @@
 			context: newTask.context || ''
 		};
 		todos = [...todos, taskWithId];
+		showChangeNotification();
+		
+		// Save to file
+		fetch('/project/api/todos', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(todos)
+		});
+	}
+	
+	// Edit task handlers
+	function handleCardClick(task: Todo) {
+		selectedTask = task;
+		editTaskModalOpen = true;
+	}
+	
+	function handleUpdateTask(updatedTask: Todo) {
+		todos = todos.map(t => t.id === updatedTask.id ? updatedTask : t);
+		showChangeNotification();
+		
+		// Save to file
+		fetch('/project/api/todos', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(todos)
+		});
+	}
+	
+	function handleDeleteTask(taskId: number) {
+		todos = todos.filter(t => t.id !== taskId);
 		showChangeNotification();
 		
 		// Save to file
@@ -185,7 +218,7 @@
 					</div>
 				</div>
 
-				<KanbanBoard bind:todos {statusOrder} {statusLabels} {showChangeNotification} />
+				<KanbanBoard bind:todos {statusOrder} {statusLabels} {showChangeNotification} onCardClick={handleCardClick} />
 			</div>
 		</TabsContent>
 
@@ -229,4 +262,13 @@
 			{/if}
 		</TabsContent>
 	</Tabs>
+	
+	<!-- Edit Task Modal -->
+	<EditTaskModal 
+		task={selectedTask} 
+		bind:open={editTaskModalOpen} 
+		onUpdateTask={handleUpdateTask} 
+		onDeleteTask={handleDeleteTask} 
+		assignees={['Duncan', 'Panda']}
+	/>
 </div>

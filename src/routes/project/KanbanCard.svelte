@@ -4,11 +4,26 @@
 	import { getPriorityColor, getPriorityIcon } from './helpers';
 	
 	let { 
-		todo
+		todo,
+		onCardClick
 	} = $props();
+
+	function handleClick(event) {
+		// Prevent click during drag
+		if (event.target.closest('.kanban-card').classList.contains('dragging')) {
+			return;
+		}
+		onCardClick?.(todo);
+	}
 </script>
 
-<div class="kanban-card bg-white rounded-lg shadow-sm border border-gray-200 p-3 mb-3 cursor-move select-none hover:shadow-md transition-all">
+<div 
+	class="kanban-card bg-white rounded-lg shadow-sm border border-gray-200 p-3 mb-3 cursor-pointer select-none hover:shadow-md transition-all"
+	onclick={handleClick}
+	role="button"
+	tabindex="0"
+	onkeydown={(e) => e.key === 'Enter' && handleClick(e)}
+>
 	<div class="flex items-start justify-between mb-2">
 		<h4 class="font-semibold text-sm text-gray-900 leading-tight flex-1 pr-2">
 			{todo.task}
