@@ -60,6 +60,8 @@
 		]
 	},
 	"dependencies": {
-		"mermaid": "^11.9.0"
+		"lucide-svelte": "^0.541.0",
+		"mermaid": "^11.9.0",
+		"svelte-dnd-action": "^0.9.64"
 	}
 }
