@@ -10,5 +10,17 @@
 		"priority": "low",
 		"description": "Design and implement an emergency information landing page for the cottage",
 		"context": "Provide emergency contact information and procedures for cottage guests"
+	},
+	{
+		"id": 2,
+		"task": "asfa",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "asfd",
+		"context": "asf"
 	}
 ]
