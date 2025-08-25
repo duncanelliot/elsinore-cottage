@@ -1,1 +1,14 @@
-[]
+[
+	{
+		"id": 1,
+		"task": "Create emergency landing page",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Design and implement an emergency information landing page for the cottage",
+		"context": "Provide emergency contact information and procedures for cottage guests"
+	}
+]

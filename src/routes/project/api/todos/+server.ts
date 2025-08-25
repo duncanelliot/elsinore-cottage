@@ -51,7 +51,16 @@ export const GET: RequestHandler = async () => {
 // POST - Handle various todo operations
 export const POST: RequestHandler = async ({ request }) => {
 	try {
-		const { action, ...data } = await request.json();
+		const body = await request.json();
+		
+		// If the body is an array, it's a direct save of all todos
+		if (Array.isArray(body)) {
+			writeTodos(body);
+			return json({ success: true, todos: body });
+		}
+		
+		// Otherwise, handle action-based operations
+		const { action, ...data } = body;
 		let todos = readTodos();
 
 		switch (action) {

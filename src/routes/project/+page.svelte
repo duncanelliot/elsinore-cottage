@@ -8,6 +8,7 @@
 	import ProjectStats from './ProjectStats.svelte';
 	import ProjectParticipants from './ProjectParticipants.svelte';
 	import SaveIndicator from './SaveIndicator.svelte';
+	import AddTaskModal from './AddTaskModal.svelte';
 	import { participants } from './data/participants.js';
 	import { projectDetails } from './data/project-details.js';
 	import { assigneeEmails } from './data/assignee-emails.js';
@@ -19,6 +20,30 @@
 
 	// Initialize todos from imported data
 	let todos = $state<Todo[]>([...(initialTodos as Todo[])]);
+	
+	// Add new task handler
+	function handleAddTask(newTask: Partial<Todo>) {
+		const maxId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) : 0;
+		const taskWithId: Todo = {
+			id: maxId + 1,
+			task: newTask.task || '',
+			assignee: newTask.assignee || [],
+			organization: newTask.organization || 'Elsinore Cottage Team',
+			status: newTask.status || 'pending',
+			priority: newTask.priority || 'medium',
+			description: newTask.description || '',
+			context: newTask.context || ''
+		};
+		todos = [...todos, taskWithId];
+		showChangeNotification();
+		
+		// Save to file
+		fetch('/project/api/todos', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(todos)
+		});
+	}
 
 	// Group todos by status
 	let todosByStatus = $derived(
@@ -154,7 +179,10 @@
 							all columns.
 						</p>
 					</div>
-					<SaveIndicator {showSaveIndicator} {lastModified} />
+					<div class="flex items-center gap-4">
+						<AddTaskModal onAddTask={handleAddTask} assignees={['Duncan', 'Panda']} />
+						<SaveIndicator {showSaveIndicator} {lastModified} />
+					</div>
 				</div>
 
 				<KanbanBoard bind:todos {statusOrder} {statusLabels} {showChangeNotification} />
