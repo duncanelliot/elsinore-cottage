@@ -1,0 +1,709 @@
+Okay, recording now.
+Okay, so there are three users, or four, potentially three or four.
+First one is somebody browsing and then having a look at the website.
+And the website should entice a user to go and either register an interest
+or to go ahead and book for a period of time.
+So for that we just need to make the landing page a bit better.
+Probably need to add some more photos.
+So I'll create a WhatsApp group with my sister on it because she has more photos.
+And the main functionality here is for a user, the ones that have decided that they want to use it
+is that, or they want to book the cottage, that they can see what dates are available
+and what the prices are.
+So we need to have a pricing engine because the pricing will be different based on different week.
+You already have that.
+Yeah, but it's not very well done.
+And I guess the other user would be admin for us and we should be able to set the price for a typical week.
+But there should be an engine, but also be able to override it for a price for a week, I guess.
+Have you seen how OBMB does it?
+No.
+I have an account. I haven't done like an owner account.
+So how do they do it?
+Don't bother.
+Because the way they do it is that the pricing is actually quite smart.
+Maybe we can replicate that for the admin part.
+So how do they do it?
+So you just select in the calendar, like normally it's this price, but in this case, like weekend, special weekend,
+change the pricing to this one.
+And it's really easy to understand. I don't know.
+Could you please log into the admin so I can have a look?
+There is nothing on the admin site for now.
+Oh, it's just the placeholder.
+Is there a better?
+Well, there is, but it's not.
+It doesn't actually do much.
+OK.
+It's CSIDE 2024.
+OK, there we go.
+So it just tells you we could probably get rid of it.
+Go back to the dashboard.
+How do you check the Wi-Fi?
+It just came up with it.
+Oh, this is AI generated.
+OK, that makes sense.
+And then so let's just focus for now on what we can do.
+So the admin section, so you're going to need to add a login.
+With the username and password.
+With the username and password.
+You're going to need to add a database for that.
+Yeah.
+Use SQLite.
+So you know it's a file based database.
+And then I'll figure out a way to deploy it.
+SQLite database so that every time we redeploy it doesn't wipe it.
+Why would it wipe it?
+Because it's a file database.
+Do you know what the difference between a file database and a...
+It will just overwrite it.
+So we use Postgres or MySQL or Oracle, which is like an RDBMS system.
+So you have a database.
+And in front of the database you have a computer, an RDBMS.
+All the requests concurrently go to that.
+And then it realises and then it pushes it to there.
+So you can have multiple connections.
+Yeah.
+And then the database is on a different machine.
+Whereas a SQLite, all you have is the database as a file.
+It's just a file.
+And then the operating system manages the concurrency, which they're known because it's supposed to be for one user only.
+And it manages the concurrency.
+But what it means is if you put that into the repo, every time you push the repo...
+It's going to wipe it.
+It's going to wipe it.
+Dangerous. Why do you want to use that?
+Because you don't need an RDBMS system for this.
+You just need a relational database management system.
+You don't. It's just an operating system.
+If I can just push a file and whenever the deployment has access to that file, then it will just connect to that file.
+The only problem is that when you change the model, you need to change the data model on this.
+And that becomes a bit complicated.
+But for now, just push it into your repo.
+And then every time you push it, it will update it.
+But no one's using it. So it's fine.
+So just do a MySQL database.
+Use Prisma ORM.
+You know Prisma?
+Prisma, MySQLite.
+See how it's done in other places.
+We did that for my portfolio, remember?
+Yeah. And then you use that for you put in your logging system with two different class of users.
+You've got guests and admin.
+So you've got, yeah.
+But so you want to have one screen so both can log in there.
+So you have a login in here.
+Login. And then you either you log in as an admin, which we are.
+Or the guest.
+Or the guest. And then the admin section, you put in the pricing from Airbnb.
+The thing is, and then try and work out a way to do the logic on that.
+And then for the guests, they get to see the house guide emergencies.
+So in like plain sight, users shouldn't be able to see house guide.
+Well, no, because it's like private information.
+Yeah, I think it should be private information.
+OK.
+And then it kind of makes sense to you, giving away the Wi-Fi as well.
+Yeah. And then in the house guide, you should have the Wi-Fi as well.
+It's set.
+Yeah. And then we should have a way to set the Wi-Fi password in the admin section as well.
+So the admin section should be Wi-Fi to set the admin password and to set the pricing.
+So the way you would do that, you would either put it in the database, right, as a settings.
+So you have a table for settings and then you say the name and whatever, whatever.
+I'd use a JSON object. I wouldn't.
+I wouldn't have a column for every kind of settings like Wi-Fi password.
+It doesn't make it.
+So you say key value pair, Wi-Fi password.
+So you change the Wi-Fi password pretty frequently?
+No, but in case you change it so we can configure it.
+I have like an Euro or something as a rooster.
+How can you manage the Wi-Fi?
+We don't. It's probably something you could help us out with.
+We'll need to put in Wi-Fi in there.
+I have the Euro, you know, Euro, the Amazon one.
+What is it?
+So basically you only manage it through the app.
+And I had that at the Airbnb as well.
+And you enable guest mode.
+So it enables at certain time, let's say two minutes before check in.
+So it's that X amount of time like after two days because they have to check out.
+Then it just stops.
+So they get, they lose Wi-Fi access as well.
+I don't care really.
+Yeah, I don't really care.
+How big is the flat?
+It's a house.
+How big is the house?
+Like three bedrooms.
+Yeah, so you've got like a pair with Wi-Fi, strong Wi-Fi as well.
+You can manage through the app. You can disable it.
+You can change the password for every single guest from here.
+That's not a problem.
+So can we do it from this interface or do you have to use our interface?
+So we need we need a connection to we need to get a connection for Internet.
+You'd have Internet.
+No, no, because it was rented privately before.
+So they did Internet heating and all that.
+We need to put that in.
+OK, I can check into my list.
+Provider.
+Yeah, so provider and a router as well.
+When he set up a router and needs to be throughout the house.
+Maybe I could send you down there when you're next.
+When I'm here, then go down and set it up.
+Yeah.
+And then.
+Yeah, so do you happen to have the address here?
+Yeah, you need to add the address and how to get there in house guide.
+Yeah, but you don't have it anywhere here.
+It's closed.
+No, but we need to add it.
+Yeah, I need to check for the Internet coverage as well.
+Yeah, yeah, yeah, yeah.
+Yeah.
+OK.
+And then I'd say check with my sister that what's left of the copy is correct.
+Like she needs to check the copy on this once you've moved out.
+And just a side note, more pictures as well.
+Yeah, for the things I had at the Airbnb, which worked pretty well.
+I had like a small shield with a QR code for the Wi-Fi with the password written and also NFC.
+So you could tap, you can scan or you can type in the password.
+That's really useful.
+I mean, just put it on here on the QR code on there.
+Yeah, but if you get NFC tags as well, that's so cheap.
+Just tap and connect.
+You don't have to do anything.
+OK, where would you do that?
+Where would you put it?
+Yeah.
+Next to the door or next to the fridge.
+OK.
+Arrange it.
+NFC tags.
+OK.
+And then that's three bedrooms.
+Three bedrooms.
+Yeah, we're moving.
+It would be nice to split.
+The book now is the most important part.
+Yeah, I think it would be nice to split.
+I use a calendar.
+I think it would be nice to split per room.
+You've got like a blueprint.
+Like this is the living room.
+You see living room pictures.
+This is the bathroom.
+You see bathroom pictures.
+Because right now it's just like general photos.
+You can't really see the bathroom here, can you?
+No.
+So it would be nice to split it.
+I can do that.
+Split the gallery per room.
+Yeah.
+And the photos seem to be quite OK, quite bright.
+There's loads of other photos it should be able to give you.
+Yeah.
+Then that book your stay.
+Like we don't have Stripe or they can't pay.
+So it has to be bank transfer.
+So it has to be book now.
+We'll send you the details or we probably give them a ring.
+We can set up an email.
+So when they book.
+So they don't really book.
+They just reserve.
+And they should get an email saying like this is the bank details.
+Well, once we've got payment confirmation, you will get a confirmation from the book as well.
+But then how do we manage the fact that people can book the whole year and not pay?
+And then suddenly nobody else can book.
+So you set a deadline.
+So we need to get the payment within 24 hours.
+OK.
+But we have to check.
+So you need to set up an email server on this and send us a email address.
+What we can do.
+So I'm thinking which bank here provides we use Revolute API.
+So you can generate like a reference number and we can do that with Revolute for sure.
+We've got revenue business.
+So inquire about that API because then the payment is automatic.
+The money hits your bank account with that reference.
+Because reference you have to check it.
+How does the platform know it's valid the booking?
+So imagine you send the email.
+OK, we've got the booking, blah, blah, blah.
+This is the reference number that you have to use.
+The money hits your bank account and that hits some other API saying, oh, the money hit this.
+The bank account confirms the booking.
+Or you can do it the old fashioned way.
+Make sure that the email, the bank confirmation, the transfer.
+No, I want Revolute to send us an email when it's done.
+Yeah.
+Yeah.
+So that's just the engine for reconciling transactions or not.
+So I think having a look for ready made components for calendars.
+Which shard? Is that shard?
+No.
+Well, this is shard.
+Yeah, but I tried to do a calendar.
+It didn't work.
+There's a component for calendar for booking.
+And but how do you do it for booking?
+Like you can.
+Anyway, I'll let you.
+Figure out how it's done on Airbnb, right?
+And then just replicate it.
+Yeah.
+Yeah, this one.
+Date range speaker.
+Yeah, but you want to see what's available and what's not.
+Aha.
+True.
+Yeah.
+Okay.
+So we need to update.
+And then you need a date.
+And the admin section, we need to be able to block book dates for us when we want to use it.
+No, that's something I can do because I use Squared with Airbnb.
+So we need to block certain dates.
+Can you cancel a booking?
+You have to ring to cancel a booking.
+So we need to put that into the email as well.
+Confirmation email.
+No, you as an admin, you cancel a booking.
+Yeah, but it needs to trigger an email as well.
+Cancel a booking.
+Up to how long in advance can you cancel?
+Well, first cancellation policy.
+Can you add it to that as a document?
+Do you have it?
+No, we need to come up with a cancellation policy.
+Like the T's and C's, we need to add T's, terms and conditions on there.
+So do you have a refund policy?
+No, but just put it in the refund policy.
+And then we should be able to cancel refund and all that in the, and it should trigger the...
+So for Airbnb, I had full refund up to two days before the booking.
+If they cancel.
+Can you put it in the booking terms and conditions?
+Yeah.
+So we can see it.
+The day of the booking, checking day, not even time checking day, no refund.
+The day before, 50%.
+Because then we would take the loss of one day.
+But I would advise something similar because people like to...
+Yeah, but in the platform we need to be able to do that.
+In the admin section.
+Yeah.
+But that's them cancelling.
+Or we can cancel as well.
+Or when we cancel, we should be able to set the... how much?
+In other words, yeah.
+So with Airbnb, you can't really cancel because that counts towards your reputation.
+So it's pretty bad, but this is yours.
+So it doesn't really matter.
+But you should be able to cancel out to two days before.
+So people can actually make some other arrangements.
+Right.
+I also want in the admin section, I want you to track who's gone to how many people have gone to the website, unique users, just doing a very simple, simple way.
+Simple mechanism.
+I don't want like a third party.
+I just want to say number of unique users coming in.
+I thought you were going to say how many people are actually inside the house, which we can make happen.
+No, no.
+And then...
+In visits.
+Then I want just a simple statistics, number of users, number of...
+Country.
+And then we need a... you need a... in the contact us.
+If you want to contact for more information before you book, we need either contact us form.
+And then that should just send an email to us.
+So we need to configure the admin.
+So all the admin accounts, I guess.
+All the... yeah.
+Contact us for me to configure who does it go to.
+Yeah.
+Oh, shit.
+Just remember something.
+What?
+I need to remember this Australian Bank thingy that you could bring up with.
+It's due to the renewal and they haven't paid.
+The service will stop, so I have to email them.
+Which service?
+Webflow.
+Remember this... sustainable...
+But this friend of yours from the Australian Bank with the oil thingy for airplanes.
+You don't remember.
+Ah, yes.
+Anyway.
+Show me.
+This one.
+Oh, Jim.
+Yes, but he resigned.
+So I've been in touch with another person last year.
+I told him, like, don't forget you have to pay.
+And it's due to the renewal, so I have to...
+Are you still billing them?
+Are you billing them?
+Just for the renewal, not because I'm not updating.
+And they're not asking you to update it.
+Yeah.
+Yeah.
+Okay.
+Okay.
+What else?
+I think that's about it for now.
+Okay, so regarding the Wi-Fi, you need Wi-Fi and you need...
+Well, we also need electricity.
+What's the budget for that?
+Water.
+Whatever, we just hook it up.
+Water, electricity.
+What do you mean, water?
+Well, we need to pay for all of the accounts because we're now taking it into...
+Yeah, but what I meant was, do you have to get a new water provider?
+Yeah, we need to sign up for Thames Water, create an account.
+But these are all of the renewals that we need to do.
+I want to have, ultimately, a mechanism for all the things that we need to do.
+Gas?
+Yeah, gas.
+Like testing...
+Insurance.
+Exactly, insurance.
+All of these things, they come up every year.
+I want it on a cycle, so there's a list of to-dos.
+And then it just shows that you've got to do this.
+And then once you've done it, you clear it, you attach the certificate, and blah, blah, blah.
+Just to remind everything.
+But we can do that as a secondary release.
+So basically, all it is is just a recurring to-do list with a mix of recurring as well as one-off that we need to be done.
+And then it needs to just give you a warning, hey, you haven't got a gas certificate, it's energy certificate.
+Do you have smoke detectors?
+No, we don't have any.
+So you have to have a smoke detector.
+So you have to have a smoke detector.
+So you have to have a smoke detector.
+Do you have smoke detectors?
+Well, we need to test the smoke detectors.
+So then the next thing is the testing.
+And CO2.
+But it needs to be like someone logs in and says, yeah, I've done the testing, done the thing.
+And then...
+You know what would be useful as well for you?
+To have Warsaw Senses, or something like League Senses.
+If there's a leak, you will get a notification as well.
+How?
+So it's really easy. You can either get a Wi-Fi one or a SIGB one and the battery lasts forever.
+But how do you sense the leak?
+So you put it where you think it could be a leak, like under the sink, for example.
+The moment it detects water, it triggers the notification.
+No.
+Okay.
+Or for the smoke detectors, for these sort of things, it's actually quite useful to have them like smart home.
+Same thing for the internet. When the internet goes down, you know, when it went down, for how long as well.
+Because you're not there and you could tell the company, like, my internet went down for two days in a row.
+I want compensation as well. You've got the logs.
+So...
+Okay.
+But let's just do version one for now. Add it all to the...
+Yeah.
+To the Kanban board.
+Yeah.
+And crack on.
+And then we'll release it and I'll add you to the...
+WhatsApp group?
+To the WhatsApp group?
+Yeah. And then if you can send the email to things to do to both Oriol and my sister, all three of us.
+So we can see...
+Yeah, I'm going to have to add her to the Kanban thing.
+So we can see what's ongoing. That'd be really good.
+Okay, request.
+You've got the email section as well in there, yeah?
+Yeah, yeah. I mean, I just have yours and mine. I don't have your sister's.
+Well, they'll create... there'll be admin accounts. So send them all to the admin accounts. Yeah.
+So in the Kanban, just do that.
+Okay.
+Yeah.
+Need the address. So please send it over the address.
+It's El Senor Denner Road.
+And one...
+There we go.
+Just paste it in slightly, yeah.
+You can just look at it.
+Is that the house? But why is it showing on sale?
+I don't know.
+Okay, that's a different one. It's straight in the cottage, that is.
+No, it's just property sold, right?
+No.
+Wow, it's really gone down.
+New switch.
+Wait, go back.
+So from 59k, from May 98...
+I mean, that's not a lot more.
+It should be a lot more than that.
+That's more like it.
+Okay, so we've got the email section.
+So we've got the email section.
+That's more like it.
+Which...
+I've got the postcode.
+Wow, this is us.
+El Senor.
+It doesn't have a number.
+I don't have a product.
+My dad bought it for 42 grand.
+That's nothing.
+Like I could get a loan, not even a mortgage.
+Oh, the internet speeds tend to be quite low over there.
+Okay.
+And so if we could add the to-do to the...
+So that we've got... At least we get internet, all that kind of stuff.
+But having something like that, I think that's not a Kanban board.
+I think it's like...
+The list of to-do will be the one-off and then the recurring,
+which would be testing CO2, which would be...
+But that thing would be like test every two months and then you would get it back on your board.
+Like for the smoke detectors.
+Smoke detectors, EPC, all there.
+We need to figure out all the regulations.
+Chimney needs to be done every year, blah, blah, blah.
+But whenever you do it, like it needs to...
+The system needs to tell you these are the things you need to do.
+You need to attach evidence.
+And then we'll need an account for the manager, the house manager.
+And the house manager will manage every week, take a video.
+I've done the cleaning, done taking a video, done...
+I thought that was from the cleaner.
+Yeah. So I want the cleaner. I want the cleaner.
+House manager... No, she's the manager. She'll do the cleaning.
+Like her job, it's this neighbor next door.
+I want a structure in place so that I can see every week.
+I can see the time uploaded. I can see the video.
+I can see everything that...
+Go around the house, take a video of everything, done.
+All good, signed, done, upload.
+And that's the manager account.
+So you probably want to put the...
+In the admin section, you want to put...
+HATCN, you know, all the different options that you've got.
+You've got on the right hand side a side drawer with...
+Like to-dos or cleaning, you know, a change over.
+I don't know how the layout would look like.
+Or manage, change the settings for Wi-Fi and all that kind of stuff.
+You know what would be nice for this?
+Because it would give you, I guess, the sense of trustworthiness.
+A review section after checking out.
+Yeah, you could add that.
+So you can add an email.
+You've got like a carousel thingy with reviews.
+Well, you can add an email section and all the reviews and then publish the one that you want.
+Obviously, you don't want to publish anyone.
+Of course.
+So a feedback section sent after it's been closed out.
+And that's it. I think that's a lot to be getting on with.
+I think this should be a great project for you to learn.
+Database, JavaScript, because you'll need a pricing engine.
+You'll need the engine for making the booking.
+So when a book, you need to push the book into the database, you need to check it.
+If it's taken.
+Exactly. So it'd be a really great project for you to do.
+Yeah, that's going to be a bit tricky, I would say, to make sure that it shows the dates that are meant to be available.
+Well, just write. No, it's not. It's five lines of code, dude.
+Just get on a call with me and then we'll write it.
+Whenever you start, just ask me and then we'll just do a screen share.
+Do you think it's worth showing the dates that tend to be more expensive?
+The what?
+The dates that tend to be more expensive, like long weekends.
+Yeah, you should definitely show in the price.
+Different colour.
+Different colour, yeah.
+Then what if you go between two sections?
+You'll have to calculate it one, two, three, four, five, six, seven, eight, nine, ten.
+Calculate it one, two, three, four, five, that day, that price, that day, that price, that day, that price.
+That's the engine.
+So you do a separate service.
+So library, lib, services, price engine.ts.
+And then you have all of your services and then you can and then your front end calls the service.
+And then say from that day to that day, calculate the price.
+And then it goes for each date, price for each summit, return it.
+But that should be also managed from the dashboard.
+Well, the server does the price calculation, but the actual pricing setting that you can set it individually.
+Or the price like on this, or you do this, or you do.
+Yeah, you do.
+Like peak season, high season, weekend premium.
+So you define, you need to define your seasons.
+And then just have a base price.
+And then you say plus X number, X number cows week is a week where it's really pricey.
+You can't get anywhere for the festival.
+There are festivals and there's cows week.
+That's how it works.
+Yeah.
+And you can set the price for like in a specific.
+I mean, that looks shit.
+Just do it with a red color scheme, you know, more expensive, less expensive.
+And that's the other thing.
+Do you want to limit the the amount of say?
+No.
+OK.
+And I've noticed as well.
+What do you mean?
+So let's say I want to look for tomorrow, but you say it's too soon.
+It's too early.
+It's too last minute.
+Yeah.
+Yeah.
+Just at least at least one day.
+Yeah.
+OK.
+So I can't book for the same day.
+OK.
+Preparation time.
+How much in advance do you show as well?
+Price settings.
+So we can.
+It's not pricing was good.
+Yeah.
+You can offer weekly discounts.
+Yeah.
+Yeah.
+Do that.
+We could discount.
+It's my pricing.
+Basically, it would set the price base on demand.
+If a lot of people were looking for a flat in that area, it would increase the price
+or decrease it.
+Like you said, the minimum and the maximum.
+And it would move on its own, depending on how many people were trying to book.
+But maybe for the next one.
+Yeah.
+Do you charge any other fees?
+Like they've got cleaning fees as well.
+Short stay fee.
+No.
+Pet fee.
+Extra.
+Price all included.
+And pets?
+Pets.
+No dogs allowed.
+OK.
+But then you should disclaim that as well.
+That if you discover that they took a dog, they will.
+But how do you force them to charge?
+Because there is no credit card on file.
+What do you do?
+Do they have to pay the deposit that they get back?
+Because OK, I read the terms and conditions.
+No dog.
+Fuck it.
+I'm going to take my dog.
+It's already pay up front.
+What are you going to do?
+After checking out, are you going to force me to pay more?
+I don't want to.
+We've got a person who will check them in.
+If they could bring the dog later.
+Doesn't matter.
+I mean, if they bring one dog, it's fine.
+But will you kick them out?
+We can't.
+We're not that 80-20 rule.
+It's fine.
+It will filter out most people.
+So it's OK.
+But you can't filter out service dogs.
+You have to add that.
+Sure.
+I have to add that.
+Service dogs.
+You have to add that.
+Sure.
+Sure.
+Add it to terms and conditions.
+No dogos.
+But service dogos are OK.
+So there's quite a few moving parts there, Panda.
+It's plenty, actually.
+That will keep you going for a while.
+Do you need to plan it out?
+Yeah.
+You need to really bring me in at every stage of the process
+to get you some feedback.
+Because don't go alone.
+Because it's going to be crazy difficult for you to go alone.
+But this is your first proper end-to-end with database project.
+It's actually quite exciting.
+That will be your struggle.
+It'll be very frustrating for you.
+But it will get you to the next level.
+So go for it.
+And on top of it, you get to stay there.
+If you do a good job, you'll do the one in Spain.
+And then you've got two holiday houses in Europe.
+And if I do a terrible job, I don't get to stay?
+Probably not, no.
+But if you're not adding value, you're not going to get any value.
+So...
+I will.
+Yeah.
+I will.
+And then that should sort you out.
+OK.
+And then whenever it's free, you can go in.
+But it's free because it's costing you money.
+Me staying there for like two, three days would cost you like, I don't know, 400 euro.
+Why would it?
+Because it's money that you're not getting from a potential booking.
+Yeah, but if it's free, it's free.
+It's fine.
+We're not looking to profit maximize that.
+We just need to get my money back.
+So I don't know.
+It doesn't cost us anything.
+OK.
+OK.
+And then, yeah, so there's a few sections.
+What I'm keen to do is to put all of them.
+I don't know if it's like a Wikipedia notion style, Wikipedia style for all of the how does everything work?
+Like how do you cut the water off?
+How do you, you know, how to how to?
+Where's the electricity meter?
+How do you read it?
+You know, all of that kind of stuff.
+But who is meant to?
+The house wiki guide for us.
+I said means I could try to implement some sort of wiki or what I did have.
+I just said build it just a very simple wiki.
+Well, you've got this already a notion alternative that's free and self hosted.
+And why would you build it?
+Because it's too big and we only need a few few bits and bod for functionality.
+OK, so it's like an eight Z.
+Or maybe tweaking.
+Yeah.
+What it is, it's just the wiki and you have a subsection electricity, blah, blah, blah, blah, blah, blah, blah, blah.
+And then part of that, like like the best practice.
+Good enough.
+OK.
+Yeah.
+But that will probably need to be probably need to be database driven because you probably want to be able to edit it.
+And you want to be able to add a new wiki.
+Add a category, subcategory.
+And then you want to be able to add like add pictures.
+Yeah.
+Do you want to include like streaming services or cable TV?
+Yeah, we probably need Netflix on that.
+Because I mean, with the Internet, it's not too expensive, I would say.
+Yeah, Netflix.
+You get Sky actually with Internet.
+Just Netflix.
+35 euro.
+Just Netflix.
+OK, that needs to be added to the.
+And then inventory as well.
+In an inventory section where all of the big items like TVs, all of that, we just be able to add added to the inventory.
+That's just another section.
+So that we can Internet is quite pricey here for the species.
+Really expensive, I would say.
+Where?
+In the UK.
+Yeah, it is.
+It is very expensive.
+Because what you get here for 67 Max for 30, 25 quid.
+I get gigabit for 20 euro.
+OK, are we done?
+Yes.
