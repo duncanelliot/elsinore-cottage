@@ -164,7 +164,6 @@ button, input, textarea, select {
 /* Nautical Navigation Styling */
 nav {
   background: linear-gradient(135deg, var(--nautical-navy) 0%, var(--nautical-blue) 100%);
-  border-bottom: 3px solid var(--nautical-teal);
 }
 
 nav a, nav button, nav span {

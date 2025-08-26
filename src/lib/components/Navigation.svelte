@@ -27,71 +27,85 @@
 	const isAdminArea = $derived(currentPath.startsWith('/admin'));
 </script>
 
-<nav class="sticky top-0 z-50 w-full border-b">
-	<div class="container mx-auto px-4">
-		<div class="flex h-16 items-center justify-between">
-			<div class="flex items-center space-x-2">
-				<Anchor class="text-nautical-white h-8 w-8" />
-				<div class="flex flex-col">
-					<span class="text-nautical-white text-xl leading-tight font-bold">Elsinore</span>
-					<span class="text-nautical-white/70 text-xs">Bembridge, Isle of Wight</span>
+<nav class="sticky top-0 z-50 w-full">
+	<div class="bg-gradient-to-r from-sky-600 to-cyan-600 relative">
+		<div class="container mx-auto px-4">
+			<div class="flex h-16 items-center justify-between">
+				<div class="flex items-center space-x-2">
+					<Anchor class="h-8 w-8 text-white" />
+					<div class="flex flex-col">
+						<span class="text-xl leading-tight font-bold text-white">Elsinore</span>
+						<span class="text-xs text-sky-100/80">Bembridge, Isle of Wight</span>
+					</div>
 				</div>
-			</div>
 
-			<div class="flex items-center space-x-1">
-				{#if !isAdminArea}
-					<!-- Guest Navigation Items -->
-					<div class="hidden items-center space-x-1 md:flex">
-						{#each guestNavItems as item}
+				<div class="flex items-center space-x-1">
+					{#if !isAdminArea}
+						<!-- Guest Navigation Items -->
+						<div class="hidden items-center space-x-1 md:flex">
+							{#each guestNavItems as item}
+								<Button
+									variant="ghost"
+									class="text-white {currentPath === item.href
+										? 'cursor-default bg-sky-700/60 hover:bg-sky-700/60'
+										: 'hover:bg-white/20'}"
+									href={item.href}
+								>
+									<item.icon class="h-4 w-4" />
+									{item.label}
+								</Button>
+							{/each}
+							<!-- Admin Button for Guest Area -->
+							<div class="ml-2">
+								<Button
+									variant="ghost"
+									class="border border-white/50 text-white hover:bg-white/20"
+									href="/admin"
+								>
+									<Settings class="mr-1 h-4 w-4" />
+									Admin
+								</Button>
+							</div>
+						</div>
+					{:else}
+						<!-- Admin Panel Indicator -->
+						<div class="mr-4 hidden items-center space-x-2 md:flex">
+							<Settings class="h-5 w-5 text-white" />
+							<span class="font-medium text-white">Admin Panel</span>
+						</div>
+						<!-- Guest Site Button for Admin Area -->
+						<div class="hidden md:block">
 							<Button
 								variant="ghost"
-								class="text-nautical-white {currentPath === item.href
-									? 'bg-slate-900/50 hover:bg-slate-900/50 cursor-default'
-									: 'hover:bg-white/20'}"
-								href={item.href}
+								class="border border-white/50 text-white hover:bg-white/20"
+								href="/"
 							>
-								<item.icon class="h-4 w-4" />
-								{item.label}
-							</Button>
-						{/each}
-						<!-- Admin Button for Guest Area -->
-						<div class="ml-2">
-							<Button
-								variant="ghost"
-								class="text-nautical-white border-nautical-white hover:bg-red/20 border"
-								href="/admin"
-							>
-								<Settings class="mr-1 h-4 w-4" />
-								Admin
+								<Home class="mr-1 h-4 w-4" />
+								Guest Site
 							</Button>
 						</div>
-					</div>
-				{:else}
-					<!-- Admin Panel Indicator -->
-					<div class="mr-4 hidden items-center space-x-2 md:flex">
-						<Settings class="text-nautical-white h-5 w-5" />
-						<span class="text-nautical-white font-medium">Admin Panel</span>
-					</div>
-					<!-- Guest Site Button for Admin Area -->
-					<div class="hidden md:block">
-						<Button
-							variant="ghost"
-							class="text-nautical-white border-nautical-white border hover:bg-white/20"
-							href="/"
-						>
-							<Home class="mr-1 h-4 w-4" />
-							Guest Site
-						</Button>
-					</div>
-				{/if}
+					{/if}
 
-				<!-- Mobile Navigation -->
-				<MobileSheet
-					navItems={isAdminArea ? adminNavItems : guestNavItems}
-					{currentPath}
-					{isAdminArea}
-				/>
+					<!-- Mobile Navigation -->
+					<MobileSheet
+						navItems={isAdminArea ? adminNavItems : guestNavItems}
+						{currentPath}
+						{isAdminArea}
+					/>
+				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Wavy bottom edge -->
+	<svg
+		class="block w-full h-3 -mt-[2px]"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 1200 120"
+		preserveAspectRatio="none"
+	>
+		<path
+			d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+			class="fill-cyan-600"
+		></path>
+	</svg>
 </nav>
