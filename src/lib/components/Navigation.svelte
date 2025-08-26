@@ -27,8 +27,8 @@
 	const isAdminArea = $derived(currentPath.startsWith('/admin'));
 </script>
 
-<nav class="sticky top-0 z-50 w-full">
-	<div class="bg-gradient-to-r from-sky-600 to-cyan-600 relative">
+<nav class="sticky top-0 z-50 w-full !bg-none">
+	<div class="relative bg-gradient-to-r from-sky-600 to-cyan-600">
 		<div class="container mx-auto px-4">
 			<div class="flex h-16 items-center justify-between">
 				<div class="flex items-center space-x-2">
@@ -98,7 +98,7 @@
 	</div>
 	<!-- Wavy bottom edge -->
 	<svg
-		class="block w-full h-3 -mt-[2px]"
+		class="-mt-[2px] block h-3 w-full"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 1200 120"
 		preserveAspectRatio="none"
