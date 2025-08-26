@@ -25,14 +25,18 @@
 			</div>
 
 			<div class="flex flex-wrap justify-center gap-4">
-				<Button size="lg" class="text-nautical-navy bg-white hover:bg-white/90" href="/booking">
+				<Button 
+					size="lg" 
+					class="bg-white text-sky-700 hover:bg-sky-50 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-4 text-lg font-semibold" 
+					href="/booking"
+				>
 					<Calendar class="mr-2 h-5 w-5" />
 					Book Your Stay
 				</Button>
 				<Button
 					size="lg"
 					variant="ghost"
-					class="border border-white text-white hover:bg-white/20"
+					class="hidden border border-white text-white hover:bg-white/20"
 					href="/cottage"
 				>
 					<Home class="mr-2 h-5 w-5" />
@@ -41,7 +45,7 @@
 				<Button
 					size="lg"
 					variant="ghost"
-					class="border border-white text-white hover:bg-white/20"
+					class="hidden border border-white text-white hover:bg-white/20"
 					href="/area"
 				>
 					<MapPin class="mr-2 h-5 w-5" />
