@@ -31,27 +31,29 @@
 	<div class="container mx-auto px-4">
 		<div class="flex h-16 items-center justify-between">
 			<div class="flex items-center space-x-2">
-				<Anchor class="h-8 w-8 text-nautical-white" />
-				<span class="text-xl font-bold text-nautical-white">Elsinore</span>
-				<span class="text-sm text-nautical-white/70">Bembridge, Isle of Wight</span>
+				<Anchor class="text-nautical-white h-8 w-8" />
+				<div class="flex flex-col">
+					<span class="text-nautical-white text-xl font-bold leading-tight">Elsinore</span>
+					<span class="text-nautical-white/70 text-xs">Bembridge, Isle of Wight</span>
+				</div>
 			</div>
 
 			{#if !isAdminArea}
-				<div class="hidden md:flex items-center space-x-1">
+				<div class="hidden items-center space-x-1 md:flex">
 					{#each guestNavItems as item}
 						<Button
 							variant={currentPath === item.href ? 'secondary' : 'ghost'}
 							class="text-nautical-white hover:bg-white/20"
 							href={item.href}
 						>
-							<item.icon class="h-4 w-4 mr-2" />
+							<item.icon class="h-4 w-4" />
 							{item.label}
 						</Button>
 					{/each}
 				</div>
 			{:else}
 				<div class="flex items-center space-x-2">
-					<Settings class="h-5 w-5 text-nautical-white" />
+					<Settings class="text-nautical-white h-5 w-5" />
 					<span class="text-nautical-white font-medium">Admin Panel</span>
 				</div>
 			{/if}
@@ -62,32 +64,31 @@
 					{#if !isAdminArea}
 						<Button
 							variant="ghost"
-							class="text-nautical-white border border-nautical-white hover:bg-white/20"
+							class="text-nautical-white border-nautical-white border hover:bg-white/20"
 							href="/admin"
 						>
-							<Settings class="h-4 w-4 mr-2" />
+							<Settings class="mr-1 h-4 w-4" />
 							Admin
 						</Button>
 					{:else}
 						<Button
 							variant="ghost"
-							class="text-nautical-white border border-nautical-white hover:bg-white/20"
+							class="text-nautical-white border-nautical-white border hover:bg-white/20"
 							href="/"
 						>
-							<Home class="h-4 w-4 mr-2" />
+							<Home class="mr-1 h-4 w-4" />
 							Guest Site
 						</Button>
 					{/if}
 				</div>
-				
+
 				<!-- Mobile Navigation -->
-				<MobileSheet 
-					navItems={isAdminArea ? adminNavItems : guestNavItems} 
-					{currentPath} 
+				<MobileSheet
+					navItems={isAdminArea ? adminNavItems : guestNavItems}
+					{currentPath}
 					{isAdminArea}
 				/>
 			</div>
 		</div>
-
 	</div>
 </nav>
