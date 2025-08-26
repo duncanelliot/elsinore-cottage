@@ -6,7 +6,7 @@
 <div class="hero-section relative flex min-h-screen items-center">
 	<div class="absolute inset-0">
 		<img src="/elsinore-1.jpg" alt="Elsinore cottage" class="h-full w-full object-cover" />
-		<div class="absolute inset-0"></div>
+		<div class="absolute inset-0 bg-black/60 backdrop-blur-xs"></div>
 	</div>
 	<div class="relative z-10 container mx-auto px-4">
 		<div class="mx-auto max-w-4xl text-center">
