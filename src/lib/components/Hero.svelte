@@ -3,7 +3,7 @@
 	import { Anchor, Calendar, Home, MapPin } from '@lucide/svelte';
 </script>
 
-<div class="hero-section relative flex min-h-screen items-center">
+<div class="hero-section relative -mt-3 flex min-h-[90vh] items-center">
 	<div class="absolute inset-0">
 		<img src="/elsinore-1.jpg" alt="Elsinore cottage" class="h-full w-full object-cover" />
 		<div class="absolute inset-0 bg-black/60 backdrop-blur-xs"></div>
@@ -52,7 +52,7 @@
 	</div>
 
 	<div class="absolute right-0 bottom-0 left-0">
-		<svg class="h-16 w-full text-slate-50" viewBox="0 0 1200 120" preserveAspectRatio="none">
+		<svg class="h-16 w-full text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
 			<path d="M0,60 C300,100 900,20 1200,60 L1200,120 L0,120 Z" fill="currentColor"></path>
 		</svg>
 	</div>
