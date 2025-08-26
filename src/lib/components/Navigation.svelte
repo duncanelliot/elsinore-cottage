@@ -45,9 +45,9 @@
 						{#each guestNavItems as item}
 							<Button
 								variant="ghost"
-								class="text-nautical-white hover:bg-white/20 {currentPath === item.href
-									? 'bg-red-900'
-									: ''}"
+								class="text-nautical-white {currentPath === item.href
+									? 'bg-slate-900/50 hover:bg-slate-900/50 cursor-default'
+									: 'hover:bg-white/20'}"
 								href={item.href}
 							>
 								<item.icon class="h-4 w-4" />
