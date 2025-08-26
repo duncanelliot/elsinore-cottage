@@ -5,7 +5,7 @@
 	import MobileSheet from './MobileSheet.svelte';
 
 	const guestNavItems = [
-		{ href: '/', label: 'Welcome', icon: Home },
+		{ href: '/', label: 'Home', icon: Home },
 		{ href: '/cottage', label: 'Cottage', icon: Home },
 		{ href: '/area', label: 'Local Area', icon: MapPin },
 		{ href: '/guide', label: 'House Guide', icon: Activity },
@@ -33,44 +33,47 @@
 			<div class="flex items-center space-x-2">
 				<Anchor class="text-nautical-white h-8 w-8" />
 				<div class="flex flex-col">
-					<span class="text-nautical-white text-xl font-bold leading-tight">Elsinore</span>
+					<span class="text-nautical-white text-xl leading-tight font-bold">Elsinore</span>
 					<span class="text-nautical-white/70 text-xs">Bembridge, Isle of Wight</span>
 				</div>
 			</div>
 
-			{#if !isAdminArea}
-				<div class="hidden items-center space-x-1 md:flex">
-					{#each guestNavItems as item}
-						<Button
-							variant={currentPath === item.href ? 'secondary' : 'ghost'}
-							class="text-nautical-white hover:bg-white/20"
-							href={item.href}
-						>
-							<item.icon class="h-4 w-4" />
-							{item.label}
-						</Button>
-					{/each}
-				</div>
-			{:else}
-				<div class="flex items-center space-x-2">
-					<Settings class="text-nautical-white h-5 w-5" />
-					<span class="text-nautical-white font-medium">Admin Panel</span>
-				</div>
-			{/if}
-
-			<div class="flex items-center space-x-2">
-				<!-- Desktop Admin/Guest Toggle -->
-				<div class="hidden md:block">
-					{#if !isAdminArea}
-						<Button
-							variant="ghost"
-							class="text-nautical-white border-nautical-white border hover:bg-white/20"
-							href="/admin"
-						>
-							<Settings class="mr-1 h-4 w-4" />
-							Admin
-						</Button>
-					{:else}
+			<div class="flex items-center space-x-1">
+				{#if !isAdminArea}
+					<!-- Guest Navigation Items -->
+					<div class="hidden items-center space-x-1 md:flex">
+						{#each guestNavItems as item}
+							<Button
+								variant="ghost"
+								class="text-nautical-white hover:bg-white/20 {currentPath === item.href
+									? 'bg-red-900'
+									: ''}"
+								href={item.href}
+							>
+								<item.icon class="h-4 w-4" />
+								{item.label}
+							</Button>
+						{/each}
+						<!-- Admin Button for Guest Area -->
+						<div class="ml-2">
+							<Button
+								variant="ghost"
+								class="text-nautical-white border-nautical-white hover:bg-red/20 border"
+								href="/admin"
+							>
+								<Settings class="mr-1 h-4 w-4" />
+								Admin
+							</Button>
+						</div>
+					</div>
+				{:else}
+					<!-- Admin Panel Indicator -->
+					<div class="mr-4 hidden items-center space-x-2 md:flex">
+						<Settings class="text-nautical-white h-5 w-5" />
+						<span class="text-nautical-white font-medium">Admin Panel</span>
+					</div>
+					<!-- Guest Site Button for Admin Area -->
+					<div class="hidden md:block">
 						<Button
 							variant="ghost"
 							class="text-nautical-white border-nautical-white border hover:bg-white/20"
@@ -79,8 +82,8 @@
 							<Home class="mr-1 h-4 w-4" />
 							Guest Site
 						</Button>
-					{/if}
-				</div>
+					</div>
+				{/if}
 
 				<!-- Mobile Navigation -->
 				<MobileSheet
