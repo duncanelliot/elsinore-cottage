@@ -8,18 +8,16 @@
 		CardTitle
 	} from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import Hero from '$lib/components/Hero.svelte';
 	import { 
-		Anchor, 
 		Waves, 
 		Home, 
-		MapPin, 
 		Phone, 
 		Activity, 
 		Wifi, 
 		Car,
 		Coffee,
-		Bath,
-		Calendar
+		Bath
 	} from '@lucide/svelte';
 </script>
 
@@ -31,55 +29,7 @@
 	/>
 </svelte:head>
 
-<!-- Hero Section -->
-<div class="relative min-h-[70vh] flex items-center hero-section">
-	<!-- Hero Background Image -->
-	<div class="absolute inset-0">
-		<img src="/elsinore-1.jpg" alt="Elsinore cottage" class="w-full h-full object-cover" />
-		<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-	</div>
-	<div class="container mx-auto px-4 relative z-10">
-		<div class="max-w-4xl">
-			<div class="flex items-center space-x-3 mb-6">
-				<Anchor class="h-12 w-12 text-white" />
-				<div>
-					<h1 class="text-5xl font-bold text-white mb-2">Welcome to Elsinore</h1>
-					<p class="text-xl text-white/90">Your castle by the sea in beautiful Bembridge</p>
-				</div>
-			</div>
-			
-			<div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 mb-8">
-				<p class="text-lg text-white/95 leading-relaxed">
-					Discover the charm of the Isle of Wight from Elsinore, your distinguished cottage in the heart of Bembridge. 
-					With stunning coastal views, modern amenities, and the regal atmosphere of your castle by the sea, 
-					your perfect royal retreat awaits.
-				</p>
-			</div>
-
-			<div class="flex flex-wrap gap-4">
-				<Button size="lg" class="bg-white text-nautical-navy hover:bg-white/90" href="/booking">
-					<Calendar class="h-5 w-5 mr-2" />
-					Book Your Stay
-				</Button>
-				<Button size="lg" variant="ghost" class="border border-white text-white hover:bg-white/20" href="/cottage">
-					<Home class="h-5 w-5 mr-2" />
-					Explore the Cottage
-				</Button>
-				<Button size="lg" variant="ghost" class="border border-white text-white hover:bg-white/20" href="/area">
-					<MapPin class="h-5 w-5 mr-2" />
-					Discover Bembridge
-				</Button>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Decorative waves -->
-	<div class="absolute bottom-0 left-0 right-0">
-		<svg class="w-full h-16 text-slate-50" viewBox="0 0 1200 120" preserveAspectRatio="none">
-			<path d="M0,60 C300,100 900,20 1200,60 L1200,120 L0,120 Z" fill="currentColor"></path>
-		</svg>
-	</div>
-</div>
+<Hero />
 
 <!-- Featured Images Section -->
 <div class="py-16 bg-white">
