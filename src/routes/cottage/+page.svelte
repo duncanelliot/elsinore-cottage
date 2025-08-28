@@ -33,7 +33,7 @@
 </svelte:head>
 
 <!-- Header Section -->
-<div class="bg-gradient-to-r from-nautical-navy to-nautical-blue text-white py-16">
+<div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white pt-32 pb-16 -mt-16">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl">
 			<div class="flex items-center space-x-3 mb-6">
