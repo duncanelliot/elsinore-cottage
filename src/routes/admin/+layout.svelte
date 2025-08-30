@@ -11,6 +11,8 @@
 		CardTitle
 	} from '$lib/components/ui/card/index.js';
 	import { Lock, Eye, EyeOff } from '@lucide/svelte';
+	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import AppSidebar from "$lib/components/app-sidebar.svelte";
 
 	let { children } = $props();
 	let password = $state('');
@@ -34,12 +36,6 @@
 		} else {
 			loginError = true;
 		}
-	}
-
-	function handleLogout() {
-		adminAuth.logout();
-		password = '';
-		loginError = false;
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
@@ -101,48 +97,20 @@
 		</Card>
 	</div>
 {:else}
-	<div class="min-h-screen bg-slate-50">
-		<!-- Admin Navigation -->
-		<nav class="from-nautical-navy to-nautical-blue border-nautical-teal border-b bg-gradient-to-r">
-			<div class="container mx-auto px-4">
-				<div class="flex h-16 items-center justify-between">
-					<div class="flex items-center space-x-6">
-						<a href="/admin" class="text-lg font-bold text-white">Admin Panel</a>
-						<div class="hidden space-x-4 md:flex">
-							<a href="/admin" class="text-white/80 transition-colors hover:text-white">Dashboard</a
-							>
-							<a href="/admin/connectivity" class="text-white/80 transition-colors hover:text-white"
-								>Connectivity</a
-							>
-							<a href="/admin/utilities" class="text-white/80 transition-colors hover:text-white"
-								>Utilities</a
-							>
-							<a href="/admin/insurance" class="text-white/80 transition-colors hover:text-white"
-								>Insurance</a
-							>
-							<a href="/admin/maintenance" class="text-white/80 transition-colors hover:text-white"
-								>Maintenance</a
-							>
-						</div>
+	<Sidebar.Provider>
+		<div class="flex min-h-screen w-full bg-background">
+			<AppSidebar />
+			<div class="flex-1">
+				<header class="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background px-6">
+					<Sidebar.Trigger class="md:hidden" />
+					<div class="flex-1">
+						<h2 class="text-lg font-semibold text-foreground">Property Management</h2>
 					</div>
-					<div class="flex items-center space-x-4">
-						<a href="/" class="text-white/80 transition-colors hover:text-white">Guest Site</a>
-						<Button
-							variant="outline"
-							size="sm"
-							class="border-white text-white hover:bg-white/20"
-							onclick={handleLogout}
-						>
-							Logout
-						</Button>
-					</div>
-				</div>
+				</header>
+				<main class="flex-1 p-6">
+					{@render children?.()}
+				</main>
 			</div>
-		</nav>
-
-		<!-- Admin Content -->
-		<main class="p-6">
-			{@render children?.()}
-		</main>
-	</div>
+		</div>
+	</Sidebar.Provider>
 {/if}

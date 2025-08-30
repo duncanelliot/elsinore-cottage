@@ -14,9 +14,6 @@
 		Zap, 
 		Droplets,
 		Flame,
-		Shield,
-		Wrench,
-		Calendar,
 		AlertTriangle,
 		CheckCircle,
 		Clock
@@ -126,41 +123,9 @@
 		</Card>
 	</div>
 
-	<div class="grid lg:grid-cols-3 gap-8">
-		<!-- Quick Actions -->
-		<Card class="lg:col-span-1">
-			<CardHeader>
-				<CardTitle class="text-nautical-navy">Quick Actions</CardTitle>
-				<CardDescription>Common management tasks</CardDescription>
-			</CardHeader>
-			<CardContent>
-				<div class="space-y-3">
-					<Button class="w-full justify-start" variant="outline" href="/admin/bookings">
-						<Calendar class="h-4 w-4 mr-2" />
-						Manage Bookings
-					</Button>
-					<Button class="w-full justify-start" variant="outline" href="/admin/connectivity">
-						<Wifi class="h-4 w-4 mr-2" />
-						Check WiFi Status
-					</Button>
-					<Button class="w-full justify-start" variant="outline" href="/admin/utilities">
-						<Zap class="h-4 w-4 mr-2" />
-						View Meter Readings
-					</Button>
-					<Button class="w-full justify-start" variant="outline" href="/admin/insurance">
-						<Shield class="h-4 w-4 mr-2" />
-						Insurance Details
-					</Button>
-					<Button class="w-full justify-start" variant="outline" href="/admin/maintenance">
-						<Wrench class="h-4 w-4 mr-2" />
-						Maintenance Schedule
-					</Button>
-				</div>
-			</CardContent>
-		</Card>
-
+	<div class="grid lg:grid-cols-2 gap-8">
 		<!-- Upcoming Tasks -->
-		<Card class="lg:col-span-1">
+		<Card>
 			<CardHeader>
 				<CardTitle class="text-nautical-navy">Upcoming Tasks</CardTitle>
 				<CardDescription>Scheduled maintenance and reminders</CardDescription>
@@ -192,7 +157,7 @@
 		</Card>
 
 		<!-- Recent Activity -->
-		<Card class="lg:col-span-1">
+		<Card>
 			<CardHeader>
 				<CardTitle class="text-nautical-navy">Recent Guests</CardTitle>
 				<CardDescription>Latest bookings and feedback</CardDescription>
