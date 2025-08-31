@@ -1,5 +1,53 @@
 [
 	{
+		"id": 17,
+		"task": "Implement date picker with availability",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Date picker showing blocked/available dates",
+		"context": "Core booking functionality"
+	},
+	{
+		"id": 18,
+		"task": "Add date blocking feature",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Admin ability to block certain dates",
+		"context": "Manage availability for maintenance or personal use"
+	},
+	{
+		"id": 4,
+		"task": "Implement user roles system",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Set up different user types: normal users, booked guests, and management",
+		"context": "Different access levels for different types of users"
+	},
+	{
+		"id": 19,
+		"task": "Implement booking cancellation",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Allow guests to cancel bookings",
+		"context": "Essential booking management feature"
+	},
+	{
 		"id": 1,
 		"task": "Create emergency landing page",
 		"assignee": [
@@ -14,7 +62,9 @@
 	{
 		"id": 3,
 		"task": "Create cottage title gallery",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -22,19 +72,11 @@
 		"context": "Main visual presentation of the cottage property"
 	},
 	{
-		"id": 4,
-		"task": "Implement user roles system",
-		"assignee": ["Panda"],
-		"organization": "Elsinore Cottage Team",
-		"status": "pending",
-		"priority": "high",
-		"description": "Set up different user types: normal users, booked guests, and management",
-		"context": "Different access levels for different types of users"
-	},
-	{
 		"id": 5,
 		"task": "Set up admin authentication",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -44,7 +86,9 @@
 	{
 		"id": 6,
 		"task": "Make House Guide private",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -54,7 +98,9 @@
 	{
 		"id": 7,
 		"task": "Create pricing configuration",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -64,7 +110,9 @@
 	{
 		"id": 8,
 		"task": "Manage WiFi password",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -74,7 +122,9 @@
 	{
 		"id": 9,
 		"task": "Add utilities information",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "low",
@@ -84,7 +134,9 @@
 	{
 		"id": 10,
 		"task": "Add insurance information",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "low",
@@ -94,7 +146,9 @@
 	{
 		"id": 11,
 		"task": "Document safety equipment",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -104,7 +158,9 @@
 	{
 		"id": 12,
 		"task": "Verify internet quality",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -114,7 +170,9 @@
 	{
 		"id": 13,
 		"task": "Implement NFC tags system",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "low",
@@ -124,7 +182,9 @@
 	{
 		"id": 14,
 		"task": "Create room galleries",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -134,7 +194,9 @@
 	{
 		"id": 15,
 		"task": "Set up email server",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -144,7 +206,9 @@
 	{
 		"id": 16,
 		"task": "Create payment confirmation system",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -152,39 +216,11 @@
 		"context": "Confirm successful payments to guests"
 	},
 	{
-		"id": 17,
-		"task": "Implement date picker with availability",
-		"assignee": ["Panda"],
-		"organization": "Elsinore Cottage Team",
-		"status": "pending",
-		"priority": "high",
-		"description": "Date picker showing blocked/available dates",
-		"context": "Core booking functionality"
-	},
-	{
-		"id": 18,
-		"task": "Add date blocking feature",
-		"assignee": ["Panda"],
-		"organization": "Elsinore Cottage Team",
-		"status": "pending",
-		"priority": "high",
-		"description": "Admin ability to block certain dates",
-		"context": "Manage availability for maintenance or personal use"
-	},
-	{
-		"id": 19,
-		"task": "Implement booking cancellation",
-		"assignee": ["Panda"],
-		"organization": "Elsinore Cottage Team",
-		"status": "pending",
-		"priority": "high",
-		"description": "Allow guests to cancel bookings",
-		"context": "Essential booking management feature"
-	},
-	{
 		"id": 20,
 		"task": "Create cancellation policy and T&C",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -194,7 +230,9 @@
 	{
 		"id": 21,
 		"task": "Implement privacy-focused analytics",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "low",
@@ -204,7 +242,9 @@
 	{
 		"id": 22,
 		"task": "Create contact form",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -214,7 +254,9 @@
 	{
 		"id": 23,
 		"task": "Implement email form",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -224,7 +266,9 @@
 	{
 		"id": 24,
 		"task": "Request photos from sister",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -234,7 +278,9 @@
 	{
 		"id": 25,
 		"task": "Add cottage address",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "high",
@@ -244,7 +290,9 @@
 	{
 		"id": 26,
 		"task": "Set up recurring event reminders",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "low",
@@ -254,7 +302,9 @@
 	{
 		"id": 27,
 		"task": "Add pet policy",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "medium",
@@ -264,7 +314,9 @@
 	{
 		"id": 28,
 		"task": "Create homemade Wiki",
-		"assignee": ["Panda"],
+		"assignee": [
+			"Panda"
+		],
 		"organization": "Elsinore Cottage Team",
 		"status": "pending",
 		"priority": "low",

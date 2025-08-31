@@ -60,10 +60,10 @@
 								<Button
 									variant="ghost"
 									class="border border-white/50 text-white hover:bg-white/20"
-									href="/admin"
+									href="/login"
 								>
 									<Settings class="mr-1 h-4 w-4" />
-									Admin
+									Login
 								</Button>
 							</div>
 						</div>
