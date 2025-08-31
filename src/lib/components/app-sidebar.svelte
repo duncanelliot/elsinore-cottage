@@ -21,12 +21,12 @@
 	const mainItems = [
 		{
 			title: "Dashboard",
-			url: "/admin",
+			url: "/admin-dashboard",
 			icon: LayoutDashboard,
 		},
 		{
 			title: "Bookings",
-			url: "/admin/bookings",
+			url: "/admin-dashboard/bookings",
 			icon: Calendar,
 			badge: "3"
 		},
@@ -36,22 +36,22 @@
 	const managementItems = [
 		{
 			title: "WiFi & Connectivity",
-			url: "/admin/connectivity",
+			url: "/admin-dashboard/connectivity",
 			icon: Wifi,
 		},
 		{
 			title: "Utilities",
-			url: "/admin/utilities",
+			url: "/admin-dashboard/utilities",
 			icon: Zap,
 		},
 		{
 			title: "Insurance",
-			url: "/admin/insurance",
+			url: "/admin-dashboard/insurance",
 			icon: Shield,
 		},
 		{
 			title: "Maintenance",
-			url: "/admin/maintenance",
+			url: "/admin-dashboard/maintenance",
 			icon: Wrench,
 		},
 	];
@@ -69,6 +69,7 @@
 
 	function handleLogout() {
 		adminAuth.logout();
+		window.location.href = '/login';
 	}
 </script>
 
@@ -78,7 +79,7 @@
 			<Sidebar.MenuItem>
 				<Sidebar.MenuButton class="hover:bg-sidebar-accent">
 					{#snippet child({ props })}
-						<a href="/admin" {...props}>
+						<a href="/admin-dashboard" {...props}>
 							<Home class="size-4" />
 							<span class="font-semibold">Elsinore Admin</span>
 						</a>

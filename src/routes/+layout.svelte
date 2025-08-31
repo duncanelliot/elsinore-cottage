@@ -6,7 +6,7 @@
 
 	let { children } = $props();
 	
-	const isAdminRoute = $derived($page.url.pathname.startsWith('/admin'));
+	const isAdminRoute = $derived($page.url.pathname.startsWith('/admin-dashboard') || $page.url.pathname.startsWith('/guest-dashboard') || $page.url.pathname === '/login');
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
