@@ -100,17 +100,12 @@
 	<Sidebar.Provider>
 		<div class="flex min-h-screen w-full bg-background">
 			<AppSidebar />
-			<div class="flex-1">
-				<header class="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background px-6">
-					<Sidebar.Trigger class="md:hidden" />
-					<div class="flex-1">
-						<h2 class="text-lg font-semibold text-foreground">Property Management</h2>
-					</div>
-				</header>
-				<main class="flex-1 p-6">
-					{@render children?.()}
-				</main>
-			</div>
+			<main class="flex-1 p-6">
+				<div class="md:hidden mb-4">
+					<Sidebar.Trigger />
+				</div>
+				{@render children?.()}
+			</main>
 		</div>
 	</Sidebar.Provider>
 {/if}

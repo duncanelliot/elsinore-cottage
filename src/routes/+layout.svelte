@@ -2,8 +2,11 @@
 	import '../app.css';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import { onNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
+	
+	const isAdminRoute = $derived($page.url.pathname.startsWith('/admin'));
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -22,7 +25,9 @@
 </svelte:head>
 
 <div class="min-h-screen bg-slate-50">
-	<Navigation />
+	{#if !isAdminRoute}
+		<Navigation />
+	{/if}
 	<main class="flex-1">
 		{@render children?.()}
 	</main>
