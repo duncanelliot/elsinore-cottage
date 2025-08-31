@@ -16,6 +16,7 @@
 	let loginMode = $state<'guest' | 'admin'>('guest');
 	let guestEmail = $state('');
 	let guestPassword = $state('');
+	let adminUsername = $state('');
 	let adminPassword = $state('');
 	let showGuestPassword = $state(false);
 	let showAdminPassword = $state(false);
@@ -46,7 +47,7 @@
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					username: 'admin-leon',
+					username: adminUsername,
 					password: adminPassword
 				})
 			});
@@ -82,12 +83,18 @@
 		loginMode = 'admin';
 		loginError = false;
 		errorMessage = '';
+		// Clear admin fields
+		adminUsername = '';
+		adminPassword = '';
 	}
 
 	function switchToGuest() {
 		loginMode = 'guest';
 		loginError = false;
 		errorMessage = '';
+		// Clear guest fields
+		guestEmail = '';
+		guestPassword = '';
 	}
 </script>
 
@@ -216,7 +223,22 @@
 						<!-- Admin Login Form -->
 						<div class="space-y-4">
 							<div class="space-y-2">
-								<Label for="admin-password">Admin Password</Label>
+								<Label for="admin-username">Username</Label>
+								<div class="relative">
+									<User class="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+									<Input
+										id="admin-username"
+										type="text"
+										placeholder="Enter admin username"
+										bind:value={adminUsername}
+										onkeydown={handleKeydown}
+										class="pl-10 {loginError ? 'border-red-500' : ''}"
+									/>
+								</div>
+							</div>
+
+							<div class="space-y-2">
+								<Label for="admin-password">Password</Label>
 								<div class="relative">
 									<Lock class="absolute left-3 top-3 h-4 w-4 text-gray-400" />
 									<Input
@@ -248,7 +270,7 @@
 							<Button
 								class="w-full bg-gradient-to-r from-slate-700 to-slate-900 hover:from-slate-800 hover:to-black !rounded-full"
 								onclick={handleAdminLogin}
-								disabled={!adminPassword}
+								disabled={!adminUsername || !adminPassword}
 							>
 								Access Admin Dashboard
 								<Shield class="ml-2 h-4 w-4" />
