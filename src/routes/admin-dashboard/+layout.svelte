@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 	import { adminAuth } from '$lib/stores/auth.js';
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import AppSidebar from "$lib/components/app-sidebar.svelte";
@@ -15,9 +16,9 @@
 		}
 	});
 
-	adminAuth.subscribe((value) => {
-		isAuthenticated = value;
-		if (!value) {
+	adminAuth.subscribe((authState) => {
+		isAuthenticated = authState.isAuthenticated;
+		if (!authState.isAuthenticated && browser) {
 			goto('/login');
 		}
 	});

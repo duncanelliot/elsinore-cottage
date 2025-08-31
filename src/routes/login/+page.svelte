@@ -38,13 +38,33 @@
 		}
 	}
 
-	function handleAdminLogin() {
-		const success = adminAuth.login(adminPassword);
-		if (success) {
-			goto('/admin-dashboard');
-		} else {
+	async function handleAdminLogin() {
+		try {
+			const response = await fetch('/api/auth/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					username: 'admin-leon',
+					password: adminPassword
+				})
+			});
+
+			if (response.ok) {
+				const data = await response.json();
+				// Store user data in adminAuth store
+				adminAuth.setUser(data.user);
+				goto('/admin-dashboard');
+			} else {
+				const error = await response.json();
+				loginError = true;
+				errorMessage = error.error || 'Incorrect admin password';
+			}
+		} catch (error) {
+			console.error('Login error:', error);
 			loginError = true;
-			errorMessage = 'Incorrect admin password';
+			errorMessage = 'Login failed. Please try again.';
 		}
 	}
 

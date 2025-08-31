@@ -10,18 +10,51 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// User model for guest accounts
+// User model for guest accounts and admin users
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
+  username  String?  @unique // For admin users
   password  String   // Will store hashed password
   name      String
   phone     String?
+  role      String   @default("guest") // guest, staff, admin, super_admin
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
+  
+  // Permissions
+  permissions Permission[]
+  
+  // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
   // Relations
   bookings  Booking[]
+}
+
+// Permission model for granular access control
+model Permission {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Permission categories
+  canViewBookings    Boolean @default(false)
+  canEditBookings    Boolean @default(false)
+  canDeleteBookings  Boolean @default(false)
+  canViewUsers       Boolean @default(false)
+  canEditUsers       Boolean @default(false)
+  canDeleteUsers     Boolean @default(false)
+  canManageSettings  Boolean @default(false)
+  canViewReports     Boolean @default(false)
+  canManageCalendar  Boolean @default(false)
+  canManagePricing   Boolean @default(false)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([userId])
 }
 
 // Booking model for reservations

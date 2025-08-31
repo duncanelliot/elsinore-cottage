@@ -30,6 +30,11 @@
 			icon: Calendar,
 			badge: "3"
 		},
+		{
+			title: "Users",
+			url: "/admin-dashboard/users",
+			icon: Users,
+		},
 	];
 
 	// Management items
