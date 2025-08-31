@@ -1,0 +1,121 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User model for guest accounts
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Will store hashed password
+  name      String
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  bookings  Booking[]
+}
+
+// Booking model for reservations
+model Booking {
+  id              String   @id @default(cuid())
+  bookingRef      String   @unique // e.g., "ELS-2024-0820"
+  
+  // Guest information
+  guestName       String
+  guestEmail      String
+  guestPhone      String?
+  numberOfGuests  Int
+  specialRequests String?
+  
+  // Booking dates
+  checkIn         DateTime
+  checkOut        DateTime
+  
+  // Financial
+  totalAmount     Float
+  depositPaid     Float    @default(0)
+  isPaid          Boolean  @default(false)
+  
+  // Status
+  status          String   @default("pending") // pending, confirmed, cancelled, completed
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  userId          String?  // Optional link to user account
+  user            User?    @relation(fields: [userId], references: [id])
+}
+
+// Availability model for calendar management
+model Availability {
+  id          String   @id @default(cuid())
+  date        DateTime @unique
+  isAvailable Boolean  @default(true)
+  isBlocked   Boolean  @default(false) // For maintenance/owner use
+  priceOverride Float? // Override base price for specific dates
+  notes       String?  // Internal notes
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Pricing tiers for dynamic pricing
+model PricingTier {
+  id         String   @id @default(cuid())
+  name       String   // e.g., "Peak Season", "Weekend"
+  startDate  DateTime?
+  endDate    DateTime?
+  multiplier Float    // e.g., 1.5 for 50% increase
+  priority   Int      @default(0) // Higher priority overrides lower
+  isActive   Boolean  @default(true)
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Admin settings for configuration
+model AdminSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  type      String   @default("string") // string, number, boolean, json
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Guest reviews/feedback
+model Review {
+  id         String   @id @default(cuid())
+  bookingId  String   @unique
+  rating     Int      // 1-5 stars
+  comment    String?
+  guestName  String
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Contact form submissions
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  type      String   @default("general") // general, booking, maintenance
+  isRead    Boolean  @default(false)
+  
+  createdAt DateTime @default(now())
+}

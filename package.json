@@ -11,7 +11,12 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"db:migrate": "prisma migrate dev",
+		"db:push": "prisma db push",
+		"db:studio": "prisma studio",
+		"db:generate": "prisma generate",
+		"db:seed": "prisma db seed"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
@@ -40,6 +45,7 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
+		"prisma": "^6.15.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"svelte-sonner": "^1.0.5",
@@ -60,6 +66,7 @@
 		]
 	},
 	"dependencies": {
+		"@prisma/client": "^6.15.0",
 		"lucide-svelte": "^0.541.0",
 		"mermaid": "^11.9.0",
 		"svelte-dnd-action": "^0.9.64"
