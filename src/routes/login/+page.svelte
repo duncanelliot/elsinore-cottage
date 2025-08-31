@@ -98,7 +98,7 @@
 			<Card class="border-none shadow-none bg-transparent">
 				<CardHeader class="space-y-1 pb-6">
 					<div class="flex justify-center mb-4">
-						<div class="p-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500">
+						<div class="p-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 transition-all duration-300">
 							{#if loginMode === 'guest'}
 								<User class="h-8 w-8 text-white" />
 							{:else}
@@ -106,10 +106,10 @@
 							{/if}
 						</div>
 					</div>
-					<CardTitle class="text-2xl text-center">
+					<CardTitle class="text-2xl text-center transition-opacity duration-200">
 						{loginMode === 'guest' ? 'Guest Login' : 'Admin Access'}
 					</CardTitle>
-					<CardDescription class="text-center">
+					<CardDescription class="text-center transition-opacity duration-200">
 						{loginMode === 'guest' 
 							? 'Access your booking and guest information' 
 							: 'Property management dashboard'}
@@ -186,7 +186,7 @@
 
 							<button
 								type="button"
-								class="w-full text-sm text-center text-blue-600 hover:text-blue-700 font-medium"
+								class="w-full text-sm text-center text-blue-600 hover:text-blue-700 font-medium transition-all hover:scale-105"
 								onclick={switchToAdmin}
 							>
 								Want to login as admin? Click here
@@ -245,7 +245,7 @@
 
 							<button
 								type="button"
-								class="w-full text-sm text-center text-blue-600 hover:text-blue-700 font-medium"
+								class="w-full text-sm text-center text-blue-600 hover:text-blue-700 font-medium transition-all hover:scale-105"
 								onclick={switchToGuest}
 							>
 								Back to guest login
