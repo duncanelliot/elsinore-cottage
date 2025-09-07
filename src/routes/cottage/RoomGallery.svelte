@@ -2,13 +2,14 @@
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs/index.js";
 	import { Dialog, DialogContent, DialogTrigger } from "$lib/components/ui/dialog/index.js";
 	import { Button } from "$lib/components/ui/button/index.js";
-	import { ChevronLeft, ChevronRight, X } from "lucide-svelte";
+	import { ChevronLeft, ChevronRight, X, Sofa, ChefHat, BedDouble, Bed, Bath } from "lucide-svelte";
 	import { fade, fly } from "svelte/transition";
 	import { browser } from '$app/environment';
 
 	interface Room {
 		id: string;
 		name: string;
+		icon: any;
 		images: { src: string; alt: string }[];
 	}
 
@@ -16,6 +17,7 @@
 		{
 			id: "living",
 			name: "Living Area",
+			icon: Sofa,
 			images: [
 				{ src: "/elsinore-1.jpg", alt: "Living room with comfortable sofa" },
 				{ src: "/elsinore-2.jpg", alt: "Living room fireplace" },
@@ -28,6 +30,7 @@
 		{
 			id: "kitchen",
 			name: "Kitchen",
+			icon: ChefHat,
 			images: [
 				{ src: "/elsinore-3.jpg", alt: "Modern kitchen with granite worktops" },
 				{ src: "/elsinore-4.jpg", alt: "Kitchen dining area" },
@@ -40,6 +43,7 @@
 		{
 			id: "master",
 			name: "Master Bedroom",
+			icon: BedDouble,
 			images: [
 				{ src: "/elsinore-4.jpg", alt: "Master bedroom with king-size bed" },
 				{ src: "/elsinore-5.jpg", alt: "Master bedroom wardrobes" },
@@ -52,6 +56,7 @@
 		{
 			id: "second",
 			name: "2nd Bedroom",
+			icon: Bed,
 			images: [
 				{ src: "/elsinore-2.jpg", alt: "Second bedroom with twin beds" },
 				{ src: "/elsinore-3.jpg", alt: "Second bedroom desk area" },
@@ -64,6 +69,7 @@
 		{
 			id: "bathroom",
 			name: "Bathroom",
+			icon: Bath,
 			images: [
 				{ src: "/elsinore-5.jpg", alt: "Bathroom with modern fixtures" },
 				{ src: "/elsinore-1.jpg", alt: "Bathroom shower" },
@@ -123,8 +129,10 @@
 	<Tabs value={selectedRoom}>
 		<TabsList class="grid w-full grid-cols-5 mb-6">
 			{#each rooms as room}
-				<TabsTrigger value={room.id} class="text-sm">
-					{room.name}
+				<TabsTrigger value={room.id} class="text-sm flex items-center gap-2">
+					<svelte:component this={room.icon} class="h-4 w-4" />
+					<span class="hidden sm:inline">{room.name}</span>
+					<span class="sm:hidden">{room.name.split(' ')[0]}</span>
 				</TabsTrigger>
 			{/each}
 		</TabsList>
@@ -135,14 +143,14 @@
 					{#each room.images as image, index}
 						<button
 							on:click={() => openLightbox(room, index)}
-							class="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-teal-500"
+							class="group relative overflow-hidden rounded-md transition-all hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-teal-500"
 						>
 							<img
 								src={image.src}
 								alt={image.alt}
-								class="h-64 w-full object-cover"
+								class="h-64 w-full object-cover rounded-md"
 							/>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+							<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-md">
 								<div class="absolute bottom-4 left-4 right-4">
 									<p class="text-white text-sm font-medium">Click to enlarge</p>
 								</div>
@@ -187,14 +195,14 @@
 			</button>
 
 			<div
-				class="max-w-6xl max-h-[90vh]"
+				class="max-w-6xl max-h-[90vh] flex flex-col items-center"
 				on:click|stopPropagation
 				transition:fly={{ y: 20, duration: 200 }}
 			>
 				<img
 					src={currentLightboxImage}
 					alt={currentLightboxAlt}
-					class="w-full h-full object-contain rounded-lg"
+					class="max-w-full max-h-[80vh] object-contain rounded-md"
 				/>
 				<div class="mt-4 text-center">
 					<p class="text-white text-lg">{currentLightboxAlt}</p>
