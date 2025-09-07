@@ -256,22 +256,22 @@
 		</div>
 
 		<!-- Check-in Information -->
-		<div class="bg-nautical-navy rounded-lg p-8 text-center text-white">
-			<h2 class="mb-4 text-2xl font-bold">Ready for Your Royal Arrival</h2>
-			<p class="mx-auto mb-6 max-w-2xl text-lg text-white/90">
+		<div class="bg-gradient-to-br from-sky-50 to-blue-100 rounded-lg p-8 text-center border border-sky-200">
+			<h2 class="mb-4 text-2xl font-bold text-slate-800">Ready for Your Royal Arrival</h2>
+			<p class="mx-auto mb-6 max-w-2xl text-lg text-slate-700">
 				Elsinore will be prepared with fresh linens, towels, and a welcome pack featuring local
 				treats. We'll provide all check-in details and house information before your arrival at your
 				castle by the sea.
 			</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				<Button size="lg" class="text-nautical-navy bg-white hover:bg-white/90" href="/guide">
+				<Button size="lg" class="bg-sky-600 hover:bg-sky-700 text-white" href="/guide">
 					<Home class="mr-2 h-5 w-5" />
 					House Guide
 				</Button>
 				<Button
 					size="lg"
-					variant="ghost"
-					class="border border-white text-white hover:bg-white/20"
+					variant="outline"
+					class="border-sky-600 text-sky-700 hover:bg-sky-600 hover:text-white"
 					href="/area"
 				>
 					<MapPin class="mr-2 h-5 w-5" />
