@@ -3,7 +3,8 @@
 	import { Dialog, DialogContent, DialogTrigger } from "$lib/components/ui/dialog/index.js";
 	import { Button } from "$lib/components/ui/button/index.js";
 	import { ChevronLeft, ChevronRight, X, Sofa, ChefHat, BedDouble, Bed, Bath } from "lucide-svelte";
-	import { fade, fly } from "svelte/transition";
+	import { fade, fly, scale } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 	import { browser } from '$app/environment';
 
 	interface Room {
@@ -126,7 +127,7 @@
 <div class="mx-auto mb-12 max-w-6xl">
 	<h2 class="text-slate-800 mb-6 text-center text-3xl font-bold">Gallery</h2>
 	
-	<Tabs value={selectedRoom}>
+	<Tabs bind:value={selectedRoom}>
 		<TabsList class="grid w-full grid-cols-5 mb-6">
 			{#each rooms as room}
 				<TabsTrigger value={room.id} class="text-sm flex items-center gap-2">
@@ -139,12 +140,27 @@
 
 		{#each rooms as room}
 			<TabsContent value={room.id} class="mt-0">
-				<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-					{#each room.images as image, index}
-						<button
-							on:click={() => openLightbox(room, index)}
-							class="group relative overflow-hidden rounded-md transition-all hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-teal-500"
+				{#key selectedRoom}
+					{#if selectedRoom === room.id}
+						<div 
+							class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+							in:fade={{ duration: 300, delay: 100, easing: quintOut }}
+							out:fade={{ duration: 200, easing: quintOut }}
 						>
+							{#each room.images as image, index}
+							<div
+								in:scale={{ 
+									duration: 400, 
+									delay: 100 + index * 60, 
+									easing: quintOut,
+									start: 0.9,
+									opacity: 0
+								}}
+							>
+							<button
+								on:click={() => openLightbox(room, index)}
+								class="group relative w-full overflow-hidden rounded-md transition-all hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-teal-500"
+							>
 							<img
 								src={image.src}
 								alt={image.alt}
@@ -155,9 +171,12 @@
 									<p class="text-white text-sm font-medium">Click to enlarge</p>
 								</div>
 							</div>
-						</button>
-					{/each}
-				</div>
+							</button>
+						</div>
+						{/each}
+						</div>
+					{/if}
+				{/key}
 			</TabsContent>
 		{/each}
 	</Tabs>
