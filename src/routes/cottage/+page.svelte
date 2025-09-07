@@ -84,8 +84,95 @@
 <!-- Main Content -->
 <div class="bg-slate-50 py-16">
 	<div class="container mx-auto px-4">
-		<!-- Image Gallery -->
-		<RoomGallery />
+		<!-- Detailed Description -->
+		<div class="mb-16">
+			<div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+				<div>
+					<div class="mb-8">
+						<span class="inline-block px-4 py-1 text-sm font-medium text-sky-800 bg-sky-100 rounded-full mb-4">Premium Victorian Cottage</span>
+						<h2 class="text-4xl font-bold leading-tight bg-gradient-to-r from-slate-800 to-blue-700 bg-clip-text text-transparent">Your Castle by the Sea</h2>
+					</div>
+					<div class="space-y-6 text-gray-600 leading-relaxed">
+						<p class="text-lg">
+							Welcome to <span class="font-semibold text-blue-700">Elsinore</span>, your distinguished Victorian cottage in the heart of Bembridge.
+							This beautifully restored red brick terraced house combines period character with
+							contemporary luxury, offering approximately <span class="font-semibold text-slate-700 bg-blue-50 px-2 py-0.5 rounded">1,400 square feet</span> of elegant living space
+							across two floors.
+						</p>
+						<div class="border-l-4 border-blue-500 pl-6 py-2 bg-blue-50/30 rounded-r-lg">
+							<p>
+								The heart of Elsinore is its stunning open-plan ground floor, featuring soaring
+								ceilings, original period details, and a magnificent fireplace in the living area. The
+								modern fitted kitchen boasts sleek black granite worktops, integrated appliances, and
+								French doors opening to your private garden - perfect for al fresco dining.
+							</p>
+						</div>
+						<p>
+							Throughout the cottage, large bay windows flood the space with natural light, while the
+							warm wooden floors and sophisticated décor create an atmosphere of refined coastal
+							living. Every detail has been carefully considered to provide the perfect blend of
+							Victorian charm and modern comfort.
+						</p>
+					</div>
+				</div>
+
+				<div class="lg:flex lg:flex-col">
+					<h3 class="text-2xl font-bold mb-6 text-slate-800">Amenities & Features</h3>
+					<div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 shadow-sm border border-blue-100/50 flex-grow">
+						<div class="grid gap-3">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">Victorian period features & high ceilings</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-sky-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">Open-plan living with original fireplace</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-cyan-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">Modern kitchen with granite worktops</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">French doors to private garden</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-blue-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">Beautiful bay windows throughout</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-slate-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">Wooden flooring & contemporary décor</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">High-speed WiFi & modern amenities</span>
+							</div>
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+								<div class="h-6 w-6 rounded-full bg-cyan-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+									<Check class="h-4 w-4 text-white" />
+								</div>
+								<span class="text-gray-700">Welcome pack with local treats</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Key Details -->
 		<div class="mb-12 grid gap-6 lg:grid-cols-4">
@@ -130,70 +217,8 @@
 			</Card>
 		</div>
 
-		<!-- Detailed Description -->
-		<div class="mb-12 grid gap-12 lg:grid-cols-2">
-			<div>
-				<h2 class="text-nautical-navy mb-6 text-3xl font-bold">Your Castle by the Sea</h2>
-				<div class="prose prose-lg text-gray-700">
-					<p class="mb-4">
-						Welcome to Elsinore, your distinguished Victorian cottage in the heart of Bembridge.
-						This beautifully restored red brick terraced house combines period character with
-						contemporary luxury, offering approximately 1,400 square feet of elegant living space
-						across two floors.
-					</p>
-					<p class="mb-4">
-						The heart of Elsinore is its stunning open-plan ground floor, featuring soaring
-						ceilings, original period details, and a magnificent fireplace in the living area. The
-						modern fitted kitchen boasts sleek black granite worktops, integrated appliances, and
-						French doors opening to your private garden - perfect for al fresco dining.
-					</p>
-					<p>
-						Throughout the cottage, large bay windows flood the space with natural light, while the
-						warm wooden floors and sophisticated décor create an atmosphere of refined coastal
-						living. Every detail has been carefully considered to provide the perfect blend of
-						Victorian charm and modern comfort.
-					</p>
-				</div>
-			</div>
-
-			<div>
-				<h3 class="text-nautical-navy mb-6 text-2xl font-bold">Amenities & Features</h3>
-				<div class="space-y-4">
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>Victorian period features & high ceilings</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>Open-plan living with original fireplace</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>Modern kitchen with granite worktops</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>French doors to private garden</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>Beautiful bay windows throughout</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>Wooden flooring & contemporary décor</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>High-speed WiFi & modern amenities</span>
-					</div>
-					<div class="flex items-center space-x-3">
-						<Check class="h-5 w-5 flex-shrink-0 text-green-600" />
-						<span>Welcome pack with local treats</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!-- Image Gallery -->
+		<RoomGallery />
 
 		<!-- Room Details -->
 		<div class="mb-12 rounded-lg bg-white p-8">
