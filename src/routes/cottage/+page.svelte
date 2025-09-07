@@ -109,8 +109,8 @@
 				</div>
 
 				<div class="lg:flex lg:flex-col">
-					<h3 class="text-2xl font-bold mb-6 text-slate-800">Amenities & Features</h3>
-					<div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 shadow-sm border border-blue-100/50 flex-grow">
+					<h3 class="text-2xl font-bold mb-6 text-slate-800 shadow-none">Amenities & Features</h3>
+					<div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 shadow-none border border-blue-200 flex-grow">
 						<div class="grid gap-3">
 							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
 								<div class="h-6 w-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
