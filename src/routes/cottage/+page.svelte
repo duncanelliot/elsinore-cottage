@@ -3,26 +3,18 @@
 	import {
 		Card,
 		CardContent,
-		CardDescription,
 		CardHeader,
 		CardTitle
 	} from '$lib/components/ui/card/index.js';
-	import { Badge } from '$lib/components/ui/badge/index.js';
 	import {
 		Home,
 		Bed,
-		Users,
-		Car,
-		Wifi,
 		Coffee,
-		Bath,
-		Tv,
-		Wind,
-		Sun,
 		MapPin,
 		Check
 	} from '@lucide/svelte';
 	import RoomGallery from './RoomGallery.svelte';
+	import KeyDetails from './KeyDetails.svelte';
 </script>
 
 <svelte:head>
@@ -175,47 +167,7 @@
 		</div>
 
 		<!-- Key Details -->
-		<div class="mb-12 grid gap-6 lg:grid-cols-4">
-			<Card class="border-nautical-teal/20 text-center">
-				<CardHeader>
-					<Bed class="text-nautical-teal mx-auto mb-2 h-8 w-8" />
-					<CardTitle class="text-nautical-navy">2 Bedrooms</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p class="text-gray-600">Comfortable sleeping for up to 4 guests</p>
-				</CardContent>
-			</Card>
-
-			<Card class="border-nautical-teal/20 text-center">
-				<CardHeader>
-					<Home class="text-nautical-teal mx-auto mb-2 h-8 w-8" />
-					<CardTitle class="text-nautical-navy">Victorian Cottage</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p class="text-gray-600">1,400 sq ft of period charm</p>
-				</CardContent>
-			</Card>
-
-			<Card class="border-nautical-teal/20 text-center">
-				<CardHeader>
-					<Car class="text-nautical-teal mx-auto mb-2 h-8 w-8" />
-					<CardTitle class="text-nautical-navy">Private Parking</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p class="text-gray-600">Dedicated parking space included</p>
-				</CardContent>
-			</Card>
-
-			<Card class="border-nautical-teal/20 text-center">
-				<CardHeader>
-					<MapPin class="text-nautical-teal mx-auto mb-2 h-8 w-8" />
-					<CardTitle class="text-nautical-navy">Prime Location</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p class="text-gray-600">Heart of Bembridge village</p>
-				</CardContent>
-			</Card>
-		</div>
+		<KeyDetails />
 
 		<!-- Image Gallery -->
 		<RoomGallery />
