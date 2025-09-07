@@ -1,8 +1,23 @@
 <script lang="ts">
-	import { MapPin, Phone, Mail, Wifi, Car, Home } from 'lucide-svelte';
+	import { MapPin, Phone, Mail, Wifi, Car, Home, Waves } from 'lucide-svelte';
 	
 	const currentYear = new Date().getFullYear();
 </script>
+
+<!-- Enjoy Your Stay Section -->
+<div class="bg-gradient-to-r from-sky-600 to-cyan-600 py-12">
+	<div class="container mx-auto px-4 text-center">
+		<div class="flex items-center justify-center space-x-3 mb-6">
+			<Waves class="h-8 w-8 text-white" />
+			<h3 class="text-2xl font-bold text-white">Enjoy Your Stay</h3>
+			<Waves class="h-8 w-8 text-white" />
+		</div>
+		<p class="text-white/90 max-w-2xl mx-auto">
+			If you have any questions during your stay, don't hesitate to reach out. 
+			We want to ensure your time in Bembridge is absolutely perfect.
+		</p>
+	</div>
+</div>
 
 <footer class="bg-slate-800 text-white">
 	<div class="container mx-auto px-4 py-12">
