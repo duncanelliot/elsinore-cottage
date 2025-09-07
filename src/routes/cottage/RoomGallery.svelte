@@ -124,7 +124,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<div class="mx-auto mb-12 max-w-6xl">
+<div class="mb-12">
 	<h2 class="text-slate-800 mb-6 text-center text-3xl font-bold">Gallery</h2>
 	
 	<Tabs bind:value={selectedRoom}>
