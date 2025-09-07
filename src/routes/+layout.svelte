@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 
@@ -24,11 +25,14 @@
 	<title>Elsinore - Holiday Cottage, Bembridge, Isle of Wight</title>
 </svelte:head>
 
-<div class="min-h-screen bg-slate-50">
+<div class="min-h-screen bg-slate-50 flex flex-col">
 	{#if !isAdminRoute}
 		<Navigation />
 	{/if}
 	<main class="flex-1">
 		{@render children?.()}
 	</main>
+	{#if !isAdminRoute}
+		<Footer />
+	{/if}
 </div>
