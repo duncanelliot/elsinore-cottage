@@ -22,6 +22,7 @@
 		MapPin,
 		Check
 	} from '@lucide/svelte';
+	import RoomGallery from './RoomGallery.svelte';
 </script>
 
 <svelte:head>
@@ -84,46 +85,7 @@
 <div class="bg-slate-50 py-16">
 	<div class="container mx-auto px-4">
 		<!-- Image Gallery -->
-		<div class="mx-auto mb-12 max-w-6xl">
-			<h2 class="text-nautical-navy mb-6 text-center text-3xl font-bold">Gallery</h2>
-			<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-				<div class="md:col-span-2 md:row-span-2 lg:col-span-2">
-					<img
-						src="/elsinore-1.jpg"
-						alt="Elsinore cottage exterior"
-						class="h-full w-full rounded-lg object-cover shadow-lg transition-shadow hover:shadow-xl"
-					/>
-				</div>
-				<div>
-					<img
-						src="/elsinore-2.jpg"
-						alt="Living room"
-						class="h-64 w-full rounded-lg object-cover shadow-lg transition-shadow hover:shadow-xl"
-					/>
-				</div>
-				<div>
-					<img
-						src="/elsinore-3.jpg"
-						alt="Kitchen area"
-						class="h-64 w-full rounded-lg object-cover shadow-lg transition-shadow hover:shadow-xl"
-					/>
-				</div>
-				<div>
-					<img
-						src="/elsinore-4.jpg"
-						alt="Bedroom"
-						class="h-64 w-full rounded-lg object-cover shadow-lg transition-shadow hover:shadow-xl"
-					/>
-				</div>
-				<div>
-					<img
-						src="/elsinore-5.jpg"
-						alt="Garden view"
-						class="h-64 w-full rounded-lg object-cover shadow-lg transition-shadow hover:shadow-xl"
-					/>
-				</div>
-			</div>
-		</div>
+		<RoomGallery />
 
 		<!-- Key Details -->
 		<div class="mb-12 grid gap-6 lg:grid-cols-4">

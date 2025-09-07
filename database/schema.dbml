@@ -1,0 +1,114 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table User {
+  id String [pk]
+  email String [unique, not null]
+  username String [unique]
+  password String [not null]
+  name String [not null]
+  phone String
+  role String [not null, default: 'guest']
+  isActive Boolean [not null, default: true]
+  lastLogin DateTime
+  permissions Permission [not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  bookings Booking [not null]
+}
+
+Table Permission {
+  id String [pk]
+  userId String [unique, not null]
+  user User [not null]
+  canViewBookings Boolean [not null, default: false]
+  canEditBookings Boolean [not null, default: false]
+  canDeleteBookings Boolean [not null, default: false]
+  canViewUsers Boolean [not null, default: false]
+  canEditUsers Boolean [not null, default: false]
+  canDeleteUsers Boolean [not null, default: false]
+  canManageSettings Boolean [not null, default: false]
+  canViewReports Boolean [not null, default: false]
+  canManageCalendar Boolean [not null, default: false]
+  canManagePricing Boolean [not null, default: false]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table Booking {
+  id String [pk]
+  bookingRef String [unique, not null]
+  guestName String [not null]
+  guestEmail String [not null]
+  guestPhone String
+  numberOfGuests Int [not null]
+  specialRequests String
+  checkIn DateTime [not null]
+  checkOut DateTime [not null]
+  totalAmount Float [not null]
+  depositPaid Float [not null, default: 0]
+  isPaid Boolean [not null, default: false]
+  status String [not null, default: 'pending']
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  userId String
+  user User
+}
+
+Table Availability {
+  id String [pk]
+  date DateTime [unique, not null]
+  isAvailable Boolean [not null, default: true]
+  isBlocked Boolean [not null, default: false]
+  priceOverride Float
+  notes String
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table PricingTier {
+  id String [pk]
+  name String [not null]
+  startDate DateTime
+  endDate DateTime
+  multiplier Float [not null]
+  priority Int [not null, default: 0]
+  isActive Boolean [not null, default: true]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table AdminSetting {
+  id String [pk]
+  key String [unique, not null]
+  value String [not null]
+  type String [not null, default: 'string']
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table Review {
+  id String [pk]
+  bookingId String [unique, not null]
+  rating Int [not null]
+  comment String
+  guestName String [not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table ContactSubmission {
+  id String [pk]
+  name String [not null]
+  email String [not null]
+  phone String
+  message String [not null]
+  type String [not null, default: 'general']
+  isRead Boolean [not null, default: false]
+  createdAt DateTime [default: `now()`, not null]
+}
+
+Ref: Permission.userId > User.id [delete: Cascade]
+
+Ref: Booking.userId > User.id
