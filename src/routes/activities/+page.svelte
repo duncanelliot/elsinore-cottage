@@ -59,7 +59,7 @@
 			<h2 class="text-3xl font-bold text-nautical-navy mb-8 text-center">Beach & Water Activities</h2>
 			
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				<Card class="border-blue-200 hover:shadow-lg transition-shadow">
+				<Card class="border-blue-200">
 					<CardHeader>
 						<Waves class="h-8 w-8 text-blue-600 mb-2" />
 						<CardTitle class="text-blue-700">Beach Days</CardTitle>
@@ -75,7 +75,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-blue-200 hover:shadow-lg transition-shadow">
+				<Card class="border-blue-200">
 					<CardHeader>
 						<Sailboat class="h-8 w-8 text-blue-600 mb-2" />
 						<CardTitle class="text-blue-700">Sailing & Boating</CardTitle>
@@ -91,7 +91,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-blue-200 hover:shadow-lg transition-shadow">
+				<Card class="border-blue-200">
 					<CardHeader>
 						<Activity class="h-8 w-8 text-blue-600 mb-2" />
 						<CardTitle class="text-blue-700">Water Sports</CardTitle>
@@ -180,7 +180,7 @@
 			<h2 class="text-3xl font-bold text-nautical-navy mb-8 text-center">Historic Attractions</h2>
 			
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				<Card class="border-amber-200 hover:shadow-lg transition-shadow">
+				<Card class="border-amber-200">
 					<CardHeader>
 						<Castle class="h-8 w-8 text-amber-600 mb-2" />
 						<CardTitle class="text-amber-700">Carisbrooke Castle</CardTitle>
@@ -198,7 +198,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-amber-200 hover:shadow-lg transition-shadow">
+				<Card class="border-amber-200">
 					<CardHeader>
 						<Camera class="h-8 w-8 text-amber-600 mb-2" />
 						<CardTitle class="text-amber-700">Osborne House</CardTitle>
@@ -216,7 +216,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-amber-200 hover:shadow-lg transition-shadow">
+				<Card class="border-amber-200">
 					<CardHeader>
 						<Mountain class="h-8 w-8 text-amber-600 mb-2" />
 						<CardTitle class="text-amber-700">Brading Roman Villa</CardTitle>
@@ -234,7 +234,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-amber-200 hover:shadow-lg transition-shadow">
+				<Card class="border-amber-200">
 					<CardHeader>
 						<Sailboat class="h-8 w-8 text-amber-600 mb-2" />
 						<CardTitle class="text-amber-700">The Needles</CardTitle>
@@ -252,7 +252,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-amber-200 hover:shadow-lg transition-shadow">
+				<Card class="border-amber-200">
 					<CardHeader>
 						<Activity class="h-8 w-8 text-amber-600 mb-2" />
 						<CardTitle class="text-amber-700">Blackgang Chine</CardTitle>
@@ -270,7 +270,7 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-amber-200 hover:shadow-lg transition-shadow">
+				<Card class="border-amber-200">
 					<CardHeader>
 						<TreePine class="h-8 w-8 text-amber-600 mb-2" />
 						<CardTitle class="text-amber-700">Amazon World Zoo</CardTitle>

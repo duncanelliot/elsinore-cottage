@@ -43,7 +43,7 @@
 		
 		<div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
 			<div class="group cursor-pointer">
-				<div class="overflow-hidden rounded-lg shadow-lg">
+				<div class="overflow-hidden rounded-lg">
 					<img src="/elsinore-2.jpg" alt="Spacious living room" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
 				</div>
 				<h3 class="text-xl font-semibold text-nautical-navy mt-4">Comfortable Living Space</h3>
@@ -51,7 +51,7 @@
 			</div>
 			
 			<div class="group cursor-pointer">
-				<div class="overflow-hidden rounded-lg shadow-lg">
+				<div class="overflow-hidden rounded-lg">
 					<img src="/elsinore-3.jpg" alt="Modern kitchen" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
 				</div>
 				<h3 class="text-xl font-semibold text-nautical-navy mt-4">Fully Equipped Kitchen</h3>
@@ -59,7 +59,7 @@
 			</div>
 			
 			<div class="group cursor-pointer">
-				<div class="overflow-hidden rounded-lg shadow-lg">
+				<div class="overflow-hidden rounded-lg">
 					<img src="/elsinore-4.jpg" alt="Comfortable bedroom" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
 				</div>
 				<h3 class="text-xl font-semibold text-nautical-navy mt-4">Peaceful Bedrooms</h3>
@@ -86,7 +86,7 @@
 		</div>
 
 		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-			<Card class="border-nautical-teal/20 hover:shadow-lg transition-shadow card-transition">
+			<Card class="border-nautical-teal/20 card-transition">
 				<CardHeader class="text-center">
 					<Wifi class="h-10 w-10 text-nautical-teal mx-auto mb-2" />
 					<CardTitle class="text-nautical-navy">High-Speed WiFi</CardTitle>
@@ -96,7 +96,7 @@
 				</CardContent>
 			</Card>
 
-			<Card class="border-nautical-teal/20 hover:shadow-lg transition-shadow card-transition">
+			<Card class="border-nautical-teal/20 card-transition">
 				<CardHeader class="text-center">
 					<Car class="h-10 w-10 text-nautical-teal mx-auto mb-2" />
 					<CardTitle class="text-nautical-navy">Private Parking</CardTitle>
@@ -106,7 +106,7 @@
 				</CardContent>
 			</Card>
 
-			<Card class="border-nautical-teal/20 hover:shadow-lg transition-shadow card-transition">
+			<Card class="border-nautical-teal/20 card-transition">
 				<CardHeader class="text-center">
 					<Coffee class="h-10 w-10 text-nautical-teal mx-auto mb-2" />
 					<CardTitle class="text-nautical-navy">Fully Equipped Kitchen</CardTitle>
@@ -116,7 +116,7 @@
 				</CardContent>
 			</Card>
 
-			<Card class="border-nautical-teal/20 hover:shadow-lg transition-shadow card-transition">
+			<Card class="border-nautical-teal/20 card-transition">
 				<CardHeader class="text-center">
 					<Bath class="h-10 w-10 text-nautical-teal mx-auto mb-2" />
 					<CardTitle class="text-nautical-navy">Modern Bathroom</CardTitle>

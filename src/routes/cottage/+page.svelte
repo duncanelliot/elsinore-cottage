@@ -109,52 +109,52 @@
 				</div>
 
 				<div class="lg:flex lg:flex-col">
-					<h3 class="text-2xl font-bold mb-6 text-slate-800 shadow-none">Amenities & Features</h3>
-					<div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 shadow-none border border-blue-200 flex-grow">
+					<h3 class="text-2xl font-bold mb-6 text-slate-800">Amenities & Features</h3>
+					<div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 border border-blue-200 flex-grow">
 						<div class="grid gap-3">
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">Victorian period features & high ceilings</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-sky-600 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">Open-plan living with original fireplace</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-cyan-600 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">Modern kitchen with granite worktops</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">French doors to private garden</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-blue-700 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">Beautiful bay windows throughout</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-slate-600 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">Wooden flooring & contemporary décor</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>
 								<span class="text-gray-700">High-speed WiFi & modern amenities</span>
 							</div>
-							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white hover:shadow-sm transition-all">
+							<div class="flex items-start space-x-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-all">
 								<div class="h-6 w-6 rounded-full bg-cyan-700 flex items-center justify-center flex-shrink-0 mt-0.5">
 									<Check class="h-4 w-4 text-white" />
 								</div>

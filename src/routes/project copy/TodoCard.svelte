@@ -102,5 +102,6 @@
 	
 	.todo-card:hover {
 		transform: translateY(-2px);
+		border-color: #374151;
 	}
 </style>

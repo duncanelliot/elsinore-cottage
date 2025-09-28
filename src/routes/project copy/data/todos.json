@@ -1,0 +1,326 @@
+[
+	{
+		"id": 17,
+		"task": "Implement date picker with availability",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Date picker showing blocked/available dates",
+		"context": "Core booking functionality"
+	},
+	{
+		"id": 18,
+		"task": "Add date blocking feature",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Admin ability to block certain dates",
+		"context": "Manage availability for maintenance or personal use"
+	},
+	{
+		"id": 4,
+		"task": "Implement user roles system",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Set up different user types: normal users, booked guests, and management",
+		"context": "Different access levels for different types of users"
+	},
+	{
+		"id": 19,
+		"task": "Implement booking cancellation",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Allow guests to cancel bookings",
+		"context": "Essential booking management feature"
+	},
+	{
+		"id": 1,
+		"task": "Create emergency landing page",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "completed",
+		"priority": "low",
+		"description": "Design and implement an emergency information landing page for the cottage",
+		"context": "Provide emergency contact information and procedures for cottage guests"
+	},
+	{
+		"id": 3,
+		"task": "Create cottage title gallery",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Implement a photo gallery for the cottage title section",
+		"context": "Main visual presentation of the cottage property"
+	},
+	{
+		"id": 5,
+		"task": "Set up admin authentication",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Create admin login system with password authentication using SQLite database",
+		"context": "Secure admin access for managing the cottage booking system"
+	},
+	{
+		"id": 6,
+		"task": "Make House Guide private",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Restrict House Guide access to logged-in users only",
+		"context": "House Guide should contain private information only for guests"
+	},
+	{
+		"id": 7,
+		"task": "Create pricing configuration",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Admin interface to set pricing for the cottage",
+		"context": "Dynamic pricing management for different seasons/periods"
+	},
+	{
+		"id": 8,
+		"task": "Manage WiFi password",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Secure storage and display of WiFi password for guests",
+		"context": "Part of the private house guide for logged-in guests"
+	},
+	{
+		"id": 9,
+		"task": "Add utilities information",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Document electricity, water, and gas information",
+		"context": "Essential utilities information for guests and management"
+	},
+	{
+		"id": 10,
+		"task": "Add insurance information",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Store and display insurance details",
+		"context": "Important documentation for the property"
+	},
+	{
+		"id": 11,
+		"task": "Document safety equipment",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Add information about smoke detectors and CO2 detectors",
+		"context": "Critical safety information for guests"
+	},
+	{
+		"id": 12,
+		"task": "Verify internet quality",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Check and ensure good internet connectivity",
+		"context": "Essential amenity for modern cottage rentals"
+	},
+	{
+		"id": 13,
+		"task": "Implement NFC tags system",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Set up NFC tags for enhanced guest experience",
+		"context": "Modern touch for easy access to information"
+	},
+	{
+		"id": 14,
+		"task": "Create room galleries",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Split gallery per room for 3 bedrooms",
+		"context": "Individual showcase for each of the 3 bedrooms"
+	},
+	{
+		"id": 15,
+		"task": "Set up email server",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Configure email server for automated communications",
+		"context": "Essential for booking confirmations and guest communications"
+	},
+	{
+		"id": 16,
+		"task": "Create payment confirmation system",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Automated payment confirmation emails",
+		"context": "Confirm successful payments to guests"
+	},
+	{
+		"id": 20,
+		"task": "Create cancellation policy and T&C",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Draft and display cancellation policy and terms & conditions",
+		"context": "Legal requirements and guest information"
+	},
+	{
+		"id": 21,
+		"task": "Implement privacy-focused analytics",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Track visits without third-party services",
+		"context": "Privacy-respecting visitor analytics"
+	},
+	{
+		"id": 22,
+		"task": "Create contact form",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "General contact us form for inquiries",
+		"context": "Guest communication channel"
+	},
+	{
+		"id": 23,
+		"task": "Implement email form",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Email submission form for guest communications",
+		"context": "Direct email communication feature"
+	},
+	{
+		"id": 24,
+		"task": "Request photos from sister",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Get professional photos of the cottage from sister",
+		"context": "High-quality images for the website"
+	},
+	{
+		"id": 25,
+		"task": "Add cottage address",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "high",
+		"description": "Display cottage location and address",
+		"context": "Essential location information for guests"
+	},
+	{
+		"id": 26,
+		"task": "Set up recurring event reminders",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Automated reminders for recurring maintenance and events",
+		"context": "Property management automation"
+	},
+	{
+		"id": 27,
+		"task": "Add pet policy",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "medium",
+		"description": "Clear policy: No dogs except service dogs",
+		"context": "Important booking policy information"
+	},
+	{
+		"id": 28,
+		"task": "Create homemade Wiki",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "pending",
+		"priority": "low",
+		"description": "Internal knowledge base for cottage management",
+		"context": "Documentation and information repository"
+	}
+]

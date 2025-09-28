@@ -228,7 +228,7 @@
 			<div class="space-y-3">
 				{#each pendingTodos as todo}
 					<div 
-						class="border-l-4 pl-4 py-2 cursor-pointer transition-all select-none {selectedTodos.get(todo.id) === true ? 'opacity-100' : 'opacity-50'} {todo.priority === 'high' ? 'border-red-500 bg-red-50' : todo.priority === 'medium' ? 'border-yellow-500 bg-yellow-50' : 'border-gray-300 bg-gray-50'}"
+						class="border-l-4 pl-4 py-2 cursor-pointer transition-all hover:border-l-8 select-none {selectedTodos.get(todo.id) === true ? 'opacity-100' : 'opacity-50'} {todo.priority === 'high' ? 'border-red-500 bg-red-50' : todo.priority === 'medium' ? 'border-yellow-500 bg-yellow-50' : 'border-gray-300 bg-gray-50'}"
 						onclick={() => toggleTodoSelection(todo.id)}
 						onkeydown={(e) => e.key === 'Enter' && toggleTodoSelection(todo.id)}
 						role="button"

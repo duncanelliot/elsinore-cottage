@@ -18,7 +18,7 @@
 </script>
 
 <div 
-	class="kanban-card bg-white rounded-lg border border-gray-200 p-3 mb-3 cursor-pointer select-none transition-all"
+	class="kanban-card bg-white rounded-lg border border-gray-200 p-3 mb-3 cursor-pointer select-none hover:border-gray-300 transition-all"
 	onclick={handleClick}
 	role="button"
 	tabindex="0"

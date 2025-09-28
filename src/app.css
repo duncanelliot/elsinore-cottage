@@ -189,3 +189,33 @@ nav button:hover {
   border-radius: 8px;
 }
 
+/* Global shadow removal */
+* {
+  box-shadow: none !important;
+}
+
+/* Override all Tailwind shadow utilities */
+.shadow-xs,
+.shadow-sm,
+.shadow,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl,
+.shadow-inner,
+.shadow-none {
+  box-shadow: none !important;
+}
+
+/* Override hover shadow utilities */
+.hover\:shadow-xs:hover,
+.hover\:shadow-sm:hover,
+.hover\:shadow:hover,
+.hover\:shadow-md:hover,
+.hover\:shadow-lg:hover,
+.hover\:shadow-xl:hover,
+.hover\:shadow-2xl:hover,
+.hover\:shadow-inner:hover {
+  box-shadow: none !important;
+}
+

@@ -69,7 +69,7 @@
 
 <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
 	<!-- Header -->
-	<header class="bg-white shadow-sm border-b">
+	<header class="bg-white border-b">
 		<div class="container mx-auto px-4 py-4">
 			<div class="flex justify-between items-center">
 				<div>

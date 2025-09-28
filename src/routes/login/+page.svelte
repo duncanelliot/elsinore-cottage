@@ -122,7 +122,7 @@
 	<!-- Right side - Login Form -->
 	<div class="w-full lg:w-2/5 flex items-center justify-center bg-white p-8">
 		<div class="w-full max-w-md">
-			<Card class="border-none shadow-none bg-transparent">
+			<Card class="border-none bg-transparent">
 				<CardHeader class="space-y-1 pb-6">
 					<div class="flex justify-center mb-4">
 						<div class="p-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 transition-all duration-300">

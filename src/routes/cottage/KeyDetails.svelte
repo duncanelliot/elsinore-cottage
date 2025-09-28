@@ -10,7 +10,7 @@
 
 <!-- Key Details -->
 <div class="mb-12 grid gap-6 lg:grid-cols-4">
-	<Card class="border border-gray-200 text-center shadow-none">
+	<Card class="border border-gray-200 text-center">
 		<CardHeader>
 			<Bed class="mx-auto mb-2 h-8 w-8 text-teal-600" />
 			<CardTitle class="text-slate-800">2 Bedrooms</CardTitle>
@@ -20,7 +20,7 @@
 		</CardContent>
 	</Card>
 
-	<Card class="border border-gray-200 text-center shadow-none">
+	<Card class="border border-gray-200 text-center">
 		<CardHeader>
 			<Home class="mx-auto mb-2 h-8 w-8 text-teal-600" />
 			<CardTitle class="text-slate-800">Victorian Cottage</CardTitle>
@@ -30,7 +30,7 @@
 		</CardContent>
 	</Card>
 
-	<Card class="border border-gray-200 text-center shadow-none">
+	<Card class="border border-gray-200 text-center">
 		<CardHeader>
 			<Car class="mx-auto mb-2 h-8 w-8 text-cyan-600" />
 			<CardTitle class="text-slate-800">Private Parking</CardTitle>
@@ -40,7 +40,7 @@
 		</CardContent>
 	</Card>
 
-	<Card class="border border-gray-200 text-center shadow-none">
+	<Card class="border border-gray-200 text-center">
 		<CardHeader>
 			<MapPin class="mx-auto mb-2 h-8 w-8 text-sky-600" />
 			<CardTitle class="text-slate-800">Prime Location</CardTitle>
