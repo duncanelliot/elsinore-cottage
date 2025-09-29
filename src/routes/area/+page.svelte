@@ -63,7 +63,7 @@
 							View Your Cottage
 						</Button>
 					</div>
-					<div class="rounded-lg overflow-hidden shadow-lg">
+					<div class="rounded-lg overflow-hidden">
 						<img src="/elsinore-1.jpg" alt="Elsinore cottage - your perfect base" class="w-full h-64 object-cover" />
 					</div>
 				</div>

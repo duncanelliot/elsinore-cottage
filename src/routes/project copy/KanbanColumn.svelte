@@ -50,7 +50,7 @@
 </script>
 
 <div class="kanban-column flex flex-col h-[calc(100vh-250px)] min-w-[320px] max-w-[400px] flex-1">
-	<div class="column-header text-white rounded-t-lg p-3" style="{getStatusHeaderStyle(status)}">
+	<div class="column-header text-white rounded-t-lg p-3 border-b border-opacity-20 border-white" style="{getStatusHeaderStyle(status)}">
 		<div class="flex items-center justify-between">
 			<h3 class="font-bold text-sm uppercase tracking-wider">
 				{label}

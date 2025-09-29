@@ -27,7 +27,7 @@
 			<div class="flex flex-wrap justify-center gap-4">
 				<Button 
 					size="lg" 
-					class="bg-white text-sky-700 hover:bg-sky-50 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-4 text-lg font-semibold" 
+					class="bg-white text-sky-700 hover:bg-sky-50 transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-4 text-lg font-semibold" 
 					href="/booking"
 				>
 					<Calendar class="mr-2 h-5 w-5" />

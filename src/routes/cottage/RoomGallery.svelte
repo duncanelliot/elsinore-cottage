@@ -159,7 +159,7 @@
 							>
 							<button
 								on:click={() => openLightbox(room, index)}
-								class="group relative w-full overflow-hidden rounded-md transition-all hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-teal-500"
+								class="group relative w-full overflow-hidden rounded-md transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-teal-500"
 							>
 							<img
 								src={image.src}

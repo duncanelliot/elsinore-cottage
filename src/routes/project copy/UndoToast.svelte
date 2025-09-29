@@ -35,7 +35,7 @@
 	in:fly={{ y: 100, duration: 300 }}
 	out:fade={{ duration: 200 }}
 >
-	<div class="bg-gray-900 text-white rounded-lg overflow-hidden min-w-[350px] max-w-md">
+	<div class="bg-gray-900 text-white rounded-lg border border-gray-700 overflow-hidden min-w-[350px] max-w-md">
 		<div class="p-4">
 			<div class="flex items-center justify-between gap-4">
 				<div class="flex-1">

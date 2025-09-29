@@ -193,7 +193,7 @@
 					class:h-auto={expandedColumn === status}
 				>
 				<div
-					class="column-header text-white rounded-t-lg p-3"
+					class="column-header text-white rounded-t-lg p-3 border-b border-opacity-20 border-white"
 					style={getStatusHeaderStyle(status)}
 				>
 					<div class="flex items-center justify-between">
@@ -239,7 +239,7 @@
 					{#each columns[status] || [] as todo (todo.id)}
 					<div
 						animate:flip={{ duration: 300 }}
-						class="kanban-card bg-white rounded-lg border border-gray-200 overflow-hidden transition-all cursor-pointer select-none"
+						class="kanban-card bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 transition-all cursor-pointer select-none"
 						class:mb-3={expandedColumn !== status}
 						class:w-full={expandedColumn === status}
 						tabindex="0"
