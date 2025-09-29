@@ -22,7 +22,7 @@
 		Mail,
 		LogOut,
 		Download
-	} from 'lucide-svelte';
+	} from '@lucide/svelte';
 	import { goto } from '$app/navigation';
 
 	// Mock guest data - in a real app this would come from authentication

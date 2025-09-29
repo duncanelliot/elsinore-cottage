@@ -29,7 +29,7 @@ model User {
   lastLogin DateTime?
   
   // Permissions
-  permissions Permission
+  permissions Permission?
   
   // Timestamps
   createdAt DateTime @default(now())
@@ -155,6 +155,63 @@ model ContactSubmission {
   message   String
   type      String   @default("general") // general, booking, maintenance
   isRead    Boolean  @default(false)
-  
+
   createdAt DateTime @default(now())
+}
+
+// Room categories enum
+enum Room {
+  LIVING_ROOM
+  DINING_ROOM
+  KITCHEN
+  STAIRS
+  BEDROOM_MAIN
+  BEDROOM_ENSUITE
+  BEDROOM_STUDY
+  BATHROOM
+  BATHROOM_ENSUITE
+  TOILETS
+  GARDEN
+  HALLWAY
+}
+
+// Furniture items for the house
+model FurnitureItem {
+  id              String   @id @default(cuid())
+  item            String   // e.g., "Sofa", "Dining Table"
+  product         String   // Product name/description
+  price           String   // Price as string to handle "TBD", ranges, etc.
+  link            String   // Product URL
+  room            Room     // Room category (enum)
+  roomDisplayName String   // Human-readable room name
+  roomColor       String   // Color for UI (blue, green, etc.)
+  primaryImage    String?  // Primary image URL
+  priority        Int      @default(0) // For ordering items
+  isActive        Boolean  @default(true) // Whether to show this item
+  buy             Boolean  @default(true) // Whether this item is selected for purchase
+  notes           String?  // Additional notes
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  images          FurnitureItemLink[]
+}
+
+// Links table for furniture item images and other resources
+model FurnitureItemLink {
+  id              String   @id @default(cuid())
+  furnitureItemId String
+  furnitureItem   FurnitureItem @relation(fields: [furnitureItemId], references: [id], onDelete: Cascade)
+
+  url             String   // Image URL or other resource URL
+  sourceUrl       String?  // Retailer/website URL where the image came from
+  retailerName    String?  // Name of the retailer (e.g., "John Lewis", "Amazon")
+  type            String   @default("image") // "image", "video", "document", etc.
+  description     String?  // Optional description
+  isPrimary       Boolean  @default(false) // Whether this is the primary image
+  priority        Int      @default(0) // For ordering multiple images
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }

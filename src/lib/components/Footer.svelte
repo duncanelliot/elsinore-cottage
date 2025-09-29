@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MapPin, Phone, Mail, Wifi, Car, Home, Waves } from 'lucide-svelte';
+	import { MapPin, Phone, Mail, Wifi, Car, Home, Waves } from '@lucide/svelte';
 	
 	const currentYear = new Date().getFullYear();
 </script>

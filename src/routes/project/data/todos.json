@@ -1,65 +1,5 @@
 [
 	{
-		"id": 17,
-		"task": "Implement date picker with availability",
-		"assignee": [
-			"Panda"
-		],
-		"organization": "Elsinore Cottage Team",
-		"status": "in_progress",
-		"priority": "high",
-		"description": "Date picker showing blocked/available dates",
-		"context": "Core booking functionality"
-	},
-	{
-		"id": 18,
-		"task": "Add date blocking feature",
-		"assignee": [
-			"Panda"
-		],
-		"organization": "Elsinore Cottage Team",
-		"status": "in_progress",
-		"priority": "high",
-		"description": "Admin ability to block certain dates",
-		"context": "Manage availability for maintenance or personal use"
-	},
-	{
-		"id": 4,
-		"task": "Implement user roles system",
-		"assignee": [
-			"Panda"
-		],
-		"organization": "Elsinore Cottage Team",
-		"status": "in_progress",
-		"priority": "high",
-		"description": "Set up different user types: normal users, booked guests, and management",
-		"context": "Different access levels for different types of users"
-	},
-	{
-		"id": 19,
-		"task": "Implement booking cancellation",
-		"assignee": [
-			"Panda"
-		],
-		"organization": "Elsinore Cottage Team",
-		"status": "in_progress",
-		"priority": "high",
-		"description": "Allow guests to cancel bookings",
-		"context": "Essential booking management feature"
-	},
-	{
-		"id": 1,
-		"task": "Create emergency landing page",
-		"assignee": [
-			"Panda"
-		],
-		"organization": "Elsinore Cottage Team",
-		"status": "completed",
-		"priority": "low",
-		"description": "Design and implement an emergency information landing page for the cottage",
-		"context": "Provide emergency contact information and procedures for cottage guests"
-	},
-	{
 		"id": 3,
 		"task": "Create cottage title gallery",
 		"assignee": [
@@ -322,5 +262,65 @@
 		"priority": "low",
 		"description": "Internal knowledge base for cottage management",
 		"context": "Documentation and information repository"
+	},
+	{
+		"id": 1,
+		"task": "Create emergency landing page",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "completed",
+		"priority": "low",
+		"description": "Design and implement an emergency information landing page for the cottage",
+		"context": "Provide emergency contact information and procedures for cottage guests"
+	},
+	{
+		"id": 17,
+		"task": "Implement date picker with availability",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Date picker showing blocked/available dates",
+		"context": "Core booking functionality"
+	},
+	{
+		"id": 18,
+		"task": "Add date blocking feature",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Admin ability to block certain dates",
+		"context": "Manage availability for maintenance or personal use"
+	},
+	{
+		"id": 4,
+		"task": "Implement user roles system",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Set up different user types: normal users, booked guests, and management",
+		"context": "Different access levels for different types of users"
+	},
+	{
+		"id": 19,
+		"task": "Implement booking cancellation",
+		"assignee": [
+			"Panda"
+		],
+		"organization": "Elsinore Cottage Team",
+		"status": "in_progress",
+		"priority": "high",
+		"description": "Allow guests to cancel bookings",
+		"context": "Essential booking management feature"
 	}
 ]

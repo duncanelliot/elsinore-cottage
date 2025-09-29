@@ -3,7 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
-	import { Plus, Edit, Trash2, User } from 'lucide-svelte';
+	import { Plus, Edit, Trash2, User } from '@lucide/svelte';
 	import CreateUserModal from './create-user-modal.svelte';
 
 	interface Permission {

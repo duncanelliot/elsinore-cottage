@@ -12,7 +12,7 @@ Table User {
   role String [not null, default: 'guest']
   isActive Boolean [not null, default: true]
   lastLogin DateTime
-  permissions Permission [not null]
+  permissions Permission
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
   bookings Booking [not null]
@@ -109,6 +109,57 @@ Table ContactSubmission {
   createdAt DateTime [default: `now()`, not null]
 }
 
-Ref: Permission.userId > User.id [delete: Cascade]
+Table FurnitureItem {
+  id String [pk]
+  item String [not null]
+  product String [not null]
+  price String [not null]
+  link String [not null]
+  room Room [not null]
+  roomDisplayName String [not null]
+  roomColor String [not null]
+  primaryImage String
+  priority Int [not null, default: 0]
+  isActive Boolean [not null, default: true]
+  buy Boolean [not null, default: true]
+  notes String
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  images FurnitureItemLink [not null]
+}
+
+Table FurnitureItemLink {
+  id String [pk]
+  furnitureItemId String [not null]
+  furnitureItem FurnitureItem [not null]
+  url String [not null]
+  sourceUrl String
+  retailerName String
+  type String [not null, default: 'image']
+  description String
+  isPrimary Boolean [not null, default: false]
+  priority Int [not null, default: 0]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Enum Room {
+  LIVING_ROOM
+  DINING_ROOM
+  KITCHEN
+  STAIRS
+  BEDROOM_MAIN
+  BEDROOM_ENSUITE
+  BEDROOM_STUDY
+  BATHROOM
+  BATHROOM_ENSUITE
+  TOILETS
+  GARDEN
+  HALLWAY
+}
+
+Ref: Permission.userId - User.id [delete: Cascade]
 
 Ref: Booking.userId > User.id
+
+Ref: FurnitureItemLink.furnitureItemId > FurnitureItem.id [delete: Cascade]

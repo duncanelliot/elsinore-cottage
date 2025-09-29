@@ -1,8 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { Anchor, MapPin, Home, Phone, Activity, Settings, Calendar } from '@lucide/svelte';
+	import { Anchor, MapPin, Home, Phone, Activity, Settings, Calendar, ChevronDown, Package, Hammer, FileText } from '@lucide/svelte';
 	import MobileSheet from './MobileSheet.svelte';
+	import {
+		DropdownMenu,
+		DropdownMenuContent,
+		DropdownMenuItem,
+		DropdownMenuTrigger
+	} from '$lib/components/ui/dropdown-menu/index.js';
 
 	const guestNavItems = [
 		{ href: '/', label: 'Home', icon: Home },
@@ -12,6 +18,12 @@
 		{ href: '/emergency', label: 'Emergency', icon: Phone },
 		{ href: '/activities', label: 'Activities', icon: Activity },
 		{ href: '/booking', label: 'Book Now', icon: Calendar }
+	];
+
+	const otherMenuItems = [
+		{ href: '/furniture', label: 'Furniture List', icon: Package },
+		{ href: '/project', label: 'Project Tracker', icon: Hammer },
+		{ href: '/cad-drawings', label: 'CAD Drawings', icon: FileText }
 	];
 
 	const adminNavItems = [
@@ -55,6 +67,30 @@
 									{item.label}
 								</Button>
 							{/each}
+
+							<!-- Other Dropdown Menu -->
+							<DropdownMenu>
+								<DropdownMenuTrigger asChild>
+									<Button
+										variant="ghost"
+										class="text-white hover:bg-white/20"
+									>
+										Other
+										<ChevronDown class="ml-1 h-4 w-4" />
+									</Button>
+								</DropdownMenuTrigger>
+								<DropdownMenuContent align="end" class="w-48">
+									{#each otherMenuItems as item}
+										<DropdownMenuItem asChild>
+											<a href={item.href} class="flex items-center cursor-pointer">
+												<item.icon class="mr-2 h-4 w-4" />
+												{item.label}
+											</a>
+										</DropdownMenuItem>
+									{/each}
+								</DropdownMenuContent>
+							</DropdownMenu>
+
 							<!-- Admin Button for Guest Area -->
 							<div class="ml-2">
 								<Button
@@ -89,6 +125,7 @@
 					<!-- Mobile Navigation -->
 					<MobileSheet
 						navItems={isAdminArea ? adminNavItems : guestNavItems}
+						otherItems={otherMenuItems}
 						{currentPath}
 						{isAdminArea}
 					/>

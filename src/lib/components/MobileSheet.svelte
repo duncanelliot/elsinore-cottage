@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { 
-		Sheet, 
-		SheetContent, 
-		SheetHeader, 
-		SheetTitle, 
-		SheetTrigger 
+	import {
+		Sheet,
+		SheetContent,
+		SheetHeader,
+		SheetTitle,
+		SheetTrigger
 	} from '$lib/components/ui/sheet/index.js';
 	import { Menu, Calendar } from '@lucide/svelte';
-	
+
 	type NavItem = {
 		href: string;
 		label: string;
@@ -17,10 +17,12 @@
 
 	let {
 		navItems,
+		otherItems = [],
 		currentPath,
 		isAdminArea = false
 	}: {
 		navItems: NavItem[];
+		otherItems?: NavItem[];
 		currentPath: string;
 		isAdminArea?: boolean;
 	} = $props();
@@ -58,8 +60,8 @@
 				<a
 					href={item.href}
 					onclick={closeSheet}
-					class="flex items-center space-x-3 px-4 py-4 rounded-lg text-gray-700 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation {currentPath === item.href 
-						? 'bg-nautical-navy text-white hover:bg-nautical-blue' 
+					class="flex items-center space-x-3 px-4 py-4 rounded-lg text-gray-700 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation {currentPath === item.href
+						? 'bg-nautical-navy text-white hover:bg-nautical-blue'
 						: ''}"
 					style="min-height: 44px;"
 				>
@@ -68,7 +70,29 @@
 				</a>
 			{/each}
 		</nav>
-		
+
+		<!-- Other Menu Section -->
+		{#if otherItems.length > 0 && !isAdminArea}
+			<div class="mt-4">
+				<p class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Other</p>
+				<nav class="flex flex-col space-y-1">
+					{#each otherItems as item}
+						<a
+							href={item.href}
+							onclick={closeSheet}
+							class="flex items-center space-x-3 px-4 py-4 rounded-lg text-gray-700 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation {currentPath === item.href
+								? 'bg-nautical-navy text-white hover:bg-nautical-blue'
+								: ''}"
+							style="min-height: 44px;"
+						>
+							<item.icon class="h-5 w-5 flex-shrink-0" />
+							<span class="font-medium">{item.label}</span>
+						</a>
+					{/each}
+				</nav>
+			</div>
+		{/if}
+
 		<!-- Divider -->
 		<div class="my-6 border-t border-gray-200"></div>
 		

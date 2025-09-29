@@ -6,7 +6,7 @@
 	import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import * as Select from '$lib/components/ui/select';
 	import { Switch } from '$lib/components/ui/switch';
-	import { X } from 'lucide-svelte';
+	import { X } from '@lucide/svelte';
 
 	const dispatch = createEventDispatcher();
 

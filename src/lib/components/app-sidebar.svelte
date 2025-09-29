@@ -11,7 +11,7 @@
 		Users,
 		AlertTriangle,
 		LogOut
-	} from 'lucide-svelte';
+	} from '@lucide/svelte';
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import { Button } from "$lib/components/ui/button/index.js";
 	import { page } from '$app/stores';

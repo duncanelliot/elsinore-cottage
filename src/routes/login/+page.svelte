@@ -11,7 +11,7 @@
 		CardHeader,
 		CardTitle
 	} from '$lib/components/ui/card/index.js';
-	import { Lock, Eye, EyeOff, User, Mail, Shield, ArrowRight } from 'lucide-svelte';
+	import { Lock, Eye, EyeOff, User, Mail, Shield, ArrowRight } from '@lucide/svelte';
 
 	let loginMode = $state<'guest' | 'admin'>('guest');
 	let guestEmail = $state('');

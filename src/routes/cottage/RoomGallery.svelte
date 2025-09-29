@@ -2,7 +2,7 @@
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs/index.js";
 	import { Dialog, DialogContent, DialogTrigger } from "$lib/components/ui/dialog/index.js";
 	import { Button } from "$lib/components/ui/button/index.js";
-	import { ChevronLeft, ChevronRight, X, Sofa, ChefHat, BedDouble, Bed, Bath } from "lucide-svelte";
+	import { ChevronLeft, ChevronRight, X, Sofa, ChefHat, BedDouble, Bed, Bath } from "@lucide/svelte";
 	import { fade, fly, scale } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
 	import { browser } from '$app/environment';

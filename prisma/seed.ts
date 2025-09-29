@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
+import fs from 'fs';
 
 const prisma = new PrismaClient();
 
@@ -106,7 +107,52 @@ async function main() {
   }
 
   console.log(`✅ Created pricing tiers`);
-  
+
+  // Clear existing furniture items first
+  await prisma.furnitureItem.deleteMany({});
+  console.log(`✅ Cleared existing furniture items`);
+
+  // Load furniture items from CSV-parsed data
+  const seedDataPath = '/Users/admin/Documents/housey/scripts/furniture-seed-data.js';
+  const seedDataContent = fs.readFileSync(seedDataPath, 'utf-8');
+  // Extract the JSON array from the file
+  const jsonMatch = seedDataContent.match(/const furnitureItems = (\[[\s\S]*?\]);/);
+  if (!jsonMatch) {
+    throw new Error('Could not parse furniture seed data');
+  }
+
+  const furnitureItems = JSON.parse(jsonMatch[1]);
+
+  for (const furnitureItem of furnitureItems) {
+    // Check if exists first, then create if not
+    const existing = await prisma.furnitureItem.findFirst({
+      where: {
+        item: furnitureItem.item,
+        product: furnitureItem.product
+      }
+    });
+
+    if (!existing) {
+      await prisma.furnitureItem.create({
+        data: {
+          item: furnitureItem.item,
+          product: furnitureItem.product,
+          price: furnitureItem.price,
+          link: furnitureItem.link,
+          room: furnitureItem.room,
+          roomDisplayName: furnitureItem.roomDisplayName,
+          roomColor: furnitureItem.roomColor,
+          primaryImage: furnitureItem.primaryImage,
+          priority: furnitureItem.priority,
+          isActive: furnitureItem.isActive,
+          notes: furnitureItem.notes
+        }
+      });
+    }
+  }
+
+  console.log(`✅ Created ${furnitureItems.length} furniture items`);
+
   console.log('🎉 Seeding completed!');
   console.log('\n📋 Admin Login Details:');
   console.log('Username: admin-leon');
